@@ -1,0 +1,616 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		20CBA67B239925FF00FE90F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CBA67A239925FF00FE90F8 /* AppDelegate.swift */; };
+		20CBA67D239925FF00FE90F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CBA67C239925FF00FE90F8 /* SceneDelegate.swift */; };
+		20CBA680239925FF00FE90F8 /* Khari.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 20CBA67E239925FF00FE90F8 /* Khari.xcdatamodeld */; };
+		20CBA682239925FF00FE90F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CBA681239925FF00FE90F8 /* ContentView.swift */; };
+		20CBA6842399260200FE90F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20CBA6832399260200FE90F8 /* Assets.xcassets */; };
+		20CBA6872399260200FE90F8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20CBA6862399260200FE90F8 /* Preview Assets.xcassets */; };
+		20CBA68A2399260200FE90F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20CBA6882399260200FE90F8 /* LaunchScreen.storyboard */; };
+		20CBA6952399260300FE90F8 /* KhariTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CBA6942399260300FE90F8 /* KhariTests.swift */; };
+		20CBA6A02399260300FE90F8 /* KhariUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CBA69F2399260300FE90F8 /* KhariUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		20CBA6912399260300FE90F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 20CBA66F239925FF00FE90F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 20CBA676239925FF00FE90F8;
+			remoteInfo = Khari;
+		};
+		20CBA69C2399260300FE90F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 20CBA66F239925FF00FE90F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 20CBA676239925FF00FE90F8;
+			remoteInfo = Khari;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		20CBA677239925FF00FE90F8 /* Khari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Khari.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		20CBA67A239925FF00FE90F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		20CBA67C239925FF00FE90F8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		20CBA67F239925FF00FE90F8 /* Khari.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Khari.xcdatamodel; sourceTree = "<group>"; };
+		20CBA681239925FF00FE90F8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		20CBA6832399260200FE90F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		20CBA6862399260200FE90F8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		20CBA6892399260200FE90F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		20CBA68B2399260300FE90F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20CBA6902399260300FE90F8 /* KhariTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KhariTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		20CBA6942399260300FE90F8 /* KhariTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KhariTests.swift; sourceTree = "<group>"; };
+		20CBA6962399260300FE90F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20CBA69B2399260300FE90F8 /* KhariUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KhariUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		20CBA69F2399260300FE90F8 /* KhariUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KhariUITests.swift; sourceTree = "<group>"; };
+		20CBA6A12399260300FE90F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		20CBA674239925FF00FE90F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20CBA68D2399260300FE90F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20CBA6982399260300FE90F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		20CBA66E239925FF00FE90F8 = {
+			isa = PBXGroup;
+			children = (
+				20CBA679239925FF00FE90F8 /* Khari */,
+				20CBA6932399260300FE90F8 /* KhariTests */,
+				20CBA69E2399260300FE90F8 /* KhariUITests */,
+				20CBA678239925FF00FE90F8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		20CBA678239925FF00FE90F8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				20CBA677239925FF00FE90F8 /* Khari.app */,
+				20CBA6902399260300FE90F8 /* KhariTests.xctest */,
+				20CBA69B2399260300FE90F8 /* KhariUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		20CBA679239925FF00FE90F8 /* Khari */ = {
+			isa = PBXGroup;
+			children = (
+				20CBA67A239925FF00FE90F8 /* AppDelegate.swift */,
+				20CBA67C239925FF00FE90F8 /* SceneDelegate.swift */,
+				20CBA681239925FF00FE90F8 /* ContentView.swift */,
+				20CBA6832399260200FE90F8 /* Assets.xcassets */,
+				20CBA6882399260200FE90F8 /* LaunchScreen.storyboard */,
+				20CBA68B2399260300FE90F8 /* Info.plist */,
+				20CBA67E239925FF00FE90F8 /* Khari.xcdatamodeld */,
+				20CBA6852399260200FE90F8 /* Preview Content */,
+			);
+			path = Khari;
+			sourceTree = "<group>";
+		};
+		20CBA6852399260200FE90F8 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				20CBA6862399260200FE90F8 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		20CBA6932399260300FE90F8 /* KhariTests */ = {
+			isa = PBXGroup;
+			children = (
+				20CBA6942399260300FE90F8 /* KhariTests.swift */,
+				20CBA6962399260300FE90F8 /* Info.plist */,
+			);
+			path = KhariTests;
+			sourceTree = "<group>";
+		};
+		20CBA69E2399260300FE90F8 /* KhariUITests */ = {
+			isa = PBXGroup;
+			children = (
+				20CBA69F2399260300FE90F8 /* KhariUITests.swift */,
+				20CBA6A12399260300FE90F8 /* Info.plist */,
+			);
+			path = KhariUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		20CBA676239925FF00FE90F8 /* Khari */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20CBA6A42399260300FE90F8 /* Build configuration list for PBXNativeTarget "Khari" */;
+			buildPhases = (
+				20CBA673239925FF00FE90F8 /* Sources */,
+				20CBA674239925FF00FE90F8 /* Frameworks */,
+				20CBA675239925FF00FE90F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Khari;
+			productName = Khari;
+			productReference = 20CBA677239925FF00FE90F8 /* Khari.app */;
+			productType = "com.apple.product-type.application";
+		};
+		20CBA68F2399260300FE90F8 /* KhariTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20CBA6A72399260300FE90F8 /* Build configuration list for PBXNativeTarget "KhariTests" */;
+			buildPhases = (
+				20CBA68C2399260300FE90F8 /* Sources */,
+				20CBA68D2399260300FE90F8 /* Frameworks */,
+				20CBA68E2399260300FE90F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				20CBA6922399260300FE90F8 /* PBXTargetDependency */,
+			);
+			name = KhariTests;
+			productName = KhariTests;
+			productReference = 20CBA6902399260300FE90F8 /* KhariTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		20CBA69A2399260300FE90F8 /* KhariUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20CBA6AA2399260300FE90F8 /* Build configuration list for PBXNativeTarget "KhariUITests" */;
+			buildPhases = (
+				20CBA6972399260300FE90F8 /* Sources */,
+				20CBA6982399260300FE90F8 /* Frameworks */,
+				20CBA6992399260300FE90F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				20CBA69D2399260300FE90F8 /* PBXTargetDependency */,
+			);
+			name = KhariUITests;
+			productName = KhariUITests;
+			productReference = 20CBA69B2399260300FE90F8 /* KhariUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		20CBA66F239925FF00FE90F8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1110;
+				LastUpgradeCheck = 1110;
+				ORGANIZATIONNAME = "Evan Gruère";
+				TargetAttributes = {
+					20CBA676239925FF00FE90F8 = {
+						CreatedOnToolsVersion = 11.1;
+					};
+					20CBA68F2399260300FE90F8 = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = 20CBA676239925FF00FE90F8;
+					};
+					20CBA69A2399260300FE90F8 = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = 20CBA676239925FF00FE90F8;
+					};
+				};
+			};
+			buildConfigurationList = 20CBA672239925FF00FE90F8 /* Build configuration list for PBXProject "Khari" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 20CBA66E239925FF00FE90F8;
+			productRefGroup = 20CBA678239925FF00FE90F8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				20CBA676239925FF00FE90F8 /* Khari */,
+				20CBA68F2399260300FE90F8 /* KhariTests */,
+				20CBA69A2399260300FE90F8 /* KhariUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		20CBA675239925FF00FE90F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20CBA68A2399260200FE90F8 /* LaunchScreen.storyboard in Resources */,
+				20CBA6872399260200FE90F8 /* Preview Assets.xcassets in Resources */,
+				20CBA6842399260200FE90F8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20CBA68E2399260300FE90F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20CBA6992399260300FE90F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		20CBA673239925FF00FE90F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20CBA67B239925FF00FE90F8 /* AppDelegate.swift in Sources */,
+				20CBA67D239925FF00FE90F8 /* SceneDelegate.swift in Sources */,
+				20CBA682239925FF00FE90F8 /* ContentView.swift in Sources */,
+				20CBA680239925FF00FE90F8 /* Khari.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20CBA68C2399260300FE90F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20CBA6952399260300FE90F8 /* KhariTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20CBA6972399260300FE90F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20CBA6A02399260300FE90F8 /* KhariUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		20CBA6922399260300FE90F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 20CBA676239925FF00FE90F8 /* Khari */;
+			targetProxy = 20CBA6912399260300FE90F8 /* PBXContainerItemProxy */;
+		};
+		20CBA69D2399260300FE90F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 20CBA676239925FF00FE90F8 /* Khari */;
+			targetProxy = 20CBA69C2399260300FE90F8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		20CBA6882399260200FE90F8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				20CBA6892399260200FE90F8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		20CBA6A22399260300FE90F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		20CBA6A32399260300FE90F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		20CBA6A52399260300FE90F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Khari/Preview Content\"";
+				DEVELOPMENT_TEAM = HAW4WKD64R;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Khari/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Ecolier.Khari;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		20CBA6A62399260300FE90F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Khari/Preview Content\"";
+				DEVELOPMENT_TEAM = HAW4WKD64R;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Khari/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Ecolier.Khari;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		20CBA6A82399260300FE90F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HAW4WKD64R;
+				INFOPLIST_FILE = KhariTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Ecolier.KhariTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Khari.app/Khari";
+			};
+			name = Debug;
+		};
+		20CBA6A92399260300FE90F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HAW4WKD64R;
+				INFOPLIST_FILE = KhariTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Ecolier.KhariTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Khari.app/Khari";
+			};
+			name = Release;
+		};
+		20CBA6AB2399260300FE90F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HAW4WKD64R;
+				INFOPLIST_FILE = KhariUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Ecolier.KhariUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Khari;
+			};
+			name = Debug;
+		};
+		20CBA6AC2399260300FE90F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HAW4WKD64R;
+				INFOPLIST_FILE = KhariUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Ecolier.KhariUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Khari;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		20CBA672239925FF00FE90F8 /* Build configuration list for PBXProject "Khari" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20CBA6A22399260300FE90F8 /* Debug */,
+				20CBA6A32399260300FE90F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		20CBA6A42399260300FE90F8 /* Build configuration list for PBXNativeTarget "Khari" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20CBA6A52399260300FE90F8 /* Debug */,
+				20CBA6A62399260300FE90F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		20CBA6A72399260300FE90F8 /* Build configuration list for PBXNativeTarget "KhariTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20CBA6A82399260300FE90F8 /* Debug */,
+				20CBA6A92399260300FE90F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		20CBA6AA2399260300FE90F8 /* Build configuration list for PBXNativeTarget "KhariUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20CBA6AB2399260300FE90F8 /* Debug */,
+				20CBA6AC2399260300FE90F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		20CBA67E239925FF00FE90F8 /* Khari.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				20CBA67F239925FF00FE90F8 /* Khari.xcdatamodel */,
+			);
+			currentVersion = 20CBA67F239925FF00FE90F8 /* Khari.xcdatamodel */;
+			path = Khari.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 20CBA66F239925FF00FE90F8 /* Project object */;
+}
