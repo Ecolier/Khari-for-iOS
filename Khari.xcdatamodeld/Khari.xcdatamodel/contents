@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E287" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="KHRStrangerEntity" representedClassName="KHRStrangerEntity" syncable="YES">
+        <attribute name="latitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="username" attributeType="String"/>
+    </entity>
+    <entity name="KHRUserEntity" representedClassName="KHRUserEntity" syncable="YES">
+        <attribute name="latitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="password" attributeType="String"/>
+        <attribute name="username" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="KHRStrangerEntity" positionX="-63" positionY="9" width="128" height="88"/>
+        <element name="KHRUserEntity" positionX="-63" positionY="-18" width="128" height="103"/>
+    </elements>
+</model>

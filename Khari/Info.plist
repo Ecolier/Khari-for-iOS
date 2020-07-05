@@ -2,6 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Location services need to be enabled for finding friends</string>
+	<key>authentication</key>
+	<string>de87a7dd3de3824e</string>
+	<key>API Host</key>
+	<string>172.20.10.2:5000</string>
+	<key>MGLMapboxAccessToken</key>
+	<string>pk.eyJ1IjoiZWNvbGllciIsImEiOiJjazI1NzZ3ZmExM3FjM2JtenV4Mnh3cDRrIn0.mcsGHcjg39qS96guD20ayg</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
