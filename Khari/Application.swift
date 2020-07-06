@@ -12,10 +12,6 @@ import SocketIO
 @UIApplicationMain
 class ApplicationDelegate: UIResponder, UIApplicationDelegate {
     
-    lazy var socketManager: SocketManager = {
-        return SocketManager(socketURL: URL(string: ServerBaseUrl)!)
-    }()
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         return true

@@ -8,31 +8,61 @@
 
 import UIKit
 import Combine
+import SocketIO
+import CoreLocation
 
 class HomeViewController: CoverableViewController {
     
     private var userLocationDidUpdateCancellable: AnyCancellable!
     private var loginCancellable: AnyCancellable!
     
-    let mapViewController: MapViewController
-    let discoveryViewController: DiscoveryViewController
-    var user: User!
+    let mapViewController = MapViewController()
+    let discoveryViewController = DiscoveryViewController()
     
-    init() {
+    let user: User
+    let socket: SocketIOClient
+    
+    var discoveredStrangers = [Stranger]()
+    
+    init(user: User, socket: SocketIOClient) {
         
-        self.mapViewController = MapViewController()
-        self.discoveryViewController = DiscoveryViewController()
+        self.user = user
+        self.socket = socket
         
         super.init(nibName: nil, bundle: nil)
         
-        if let storedUser = Authentication.fetchCurrentUser() {
-            self.loginCancellable = Authentication.login(username: storedUser.username, password: storedUser.password).sink { user in
-                self.user = user
-            }
-        }
-        
         self.fullscreenViewController = self.mapViewController
         self.collapsableViewController = self.discoveryViewController
+        
+        self.socket.on("strangers discovered") { dataArray, ack in
+            
+            if self.discoveredStrangers.count < dataArray.count {
+                
+                for data in dataArray {
+                    if let dict = data as? [String: Any],
+                        let username = dict["username"] as? String,
+                        let location = dict["location"] as? [String: Any],
+                        let coordinates = location["coordinates"] as? [Double] {
+                        
+                        if username != self.user.username {
+                            
+                            let stranger = Stranger(identifier: username, longitude: coordinates[0], latitude: coordinates[1])
+
+                            self.discoveredStrangers.append(stranger)
+                            
+                            let annotation = StrangerAnnotation(stranger: stranger)
+                            annotation.coordinate = CLLocationCoordinate2D(latitude: stranger.latitude, longitude: stranger.longitude)
+                            annotation.title = stranger.identifier
+                            self.mapViewController.mapView.addAnnotation(annotation)
+                            
+                        }
+                        
+                    }
+                }
+                
+            }
+            
+        }
     }
     
     required init?(coder: NSCoder) {
@@ -58,13 +88,13 @@ class HomeViewController: CoverableViewController {
             self.discoveryViewController.managedViewController = strangerController
         }
         
-        self.userLocationDidUpdateCancellable = self.mapViewController.userLocationDidUpdate.sink { coordinate in
+        self.userLocationDidUpdateCancellable = self.mapViewController.userLocationDidUpdate.sink { coordinates in
             
-            if let delegate = UIApplication.shared.delegate as? ApplicationDelegate {
-                delegate.socketManager.defaultSocket.emit("update user location", [
-                    ["username": self.user.username]
-                ])
-            }
+            self.socket.emit("update location",
+                             ["username": self.user.username, "password": self.user.password, "latitude": coordinates.latitude, "longitude": coordinates.longitude])
+            
+            self.socket.emit("discover strangers",
+            ["latitude": coordinates.latitude, "longitude": coordinates.longitude])
             
         }
     }

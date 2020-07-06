@@ -9,8 +9,15 @@
 import UIKit
 import SwiftUI
 import Combine
+import SocketIO
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+    
+    lazy var socketManager: SocketManager = {
+        return SocketManager(socketURL: URL(string: ServerBaseUrl)!)
+    }()
+    
+    private var loginCancellable: AnyCancellable!
 
     var window: UIWindow?
 
@@ -18,7 +25,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = HomeViewController()
+            
+            if let authentication = Authentication.fetchCurrentUser() {
+                self.loginCancellable = Authentication.login(username: "28640beb", password: "4c0d61d2").sink { user in
+                    window.rootViewController = HomeViewController(user: user, socket: self.socketManager.defaultSocket)
+                }
+            }
+            
             window.makeKeyAndVisible()
             self.window = window
         }
@@ -26,15 +39,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
-        if let delegate = UIApplication.shared.delegate as? ApplicationDelegate {
-            delegate.socketManager.disconnect()
-        }
+        self.socketManager.defaultSocket.disconnect()
     }
     
     func sceneDidBecomeActive(_ scene: UIScene) {
-        if let delegate = UIApplication.shared.delegate as? ApplicationDelegate {
-            delegate.socketManager.connect()
-        }
+        self.socketManager.defaultSocket.connect()
+        
     }
     
     func sceneWillResignActive(_ scene: UIScene) { }

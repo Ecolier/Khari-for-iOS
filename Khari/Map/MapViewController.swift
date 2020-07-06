@@ -14,7 +14,6 @@ import Combine
 class MapViewController: UIViewController, MGLMapViewDelegate {
     
     let mapView = MapView()
-    var discoveredStrangers = [Stranger]()
     
     private lazy var userLocationDidUpdateSubject = PassthroughSubject<CLLocationCoordinate2D, Never>()
     lazy var userLocationDidUpdate = self.userLocationDidUpdateSubject.eraseToAnyPublisher()
@@ -29,10 +28,7 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
         
         self.mapView.delegate = self
         
-        self.generateStrangersCancellable = self.userLocationDidUpdate.sink { coordinates in
-            
-            self.user.latitude = coordinates.latitude
-            self.user.longitude = coordinates.longitude
+        /**self.generateStrangersCancellable = self.userLocationDidUpdate.sink { coordinates in
             
             if self.discoveredStrangers.count < 5 {
                 
@@ -48,7 +44,7 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
                 
             }
             
-        }
+        } **/
         
     }
     

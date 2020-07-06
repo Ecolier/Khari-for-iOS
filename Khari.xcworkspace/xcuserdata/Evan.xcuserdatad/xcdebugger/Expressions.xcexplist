@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "MapController.loadView():MapController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "KHRMapController.viewDidLayoutSubviews():MapController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.view.frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "KHRSetConnectedUser(_:in:):User.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "userEntity.username">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "KHRRequestCreateUser():Network.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "result.sink">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in MapService.updateUserLocation(_:):MapService.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "data">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in static Authentication.login(username:password:):Authentication.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "response.value">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "UserHeader.init(name:location:):UserView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.name.textColor">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in KHRRegister():User.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "$0">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in KHRRegister():User.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "String(data: $0.data!, encoding: .utf8)">
+            </PersistentString>
+            <PersistentString
+               value = "response.value">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in KHRRequestCreateUser():Http.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "$0.data">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MapController.init():MapController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "UIView.init(styleSheet:):StyleSheet.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self is UILabel">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in KHRApplicationDelegate.connect():Application.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "scene.activationState">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "HomeViewController.viewDidLayoutSubviews():HomeViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.discoveryViewController">
+            </PersistentString>
+            <PersistentString
+               value = "self.collapsableViewController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "StyleSheet.isSupported(_:):StyleSheet.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "supported.isEmpty()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MapService.updateUserLocation(_:):MapService.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "user.name">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in closure #1 in SceneDelegate.scene(_:willConnectTo:options:):SceneDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "response.data">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #2 in KHRAppDelegate.application(_:didFinishLaunchingWithOptions:):AppDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "user.value">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "KHRMapController.viewDidLoad():MapController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.view.frame">
+            </PersistentString>
+            <PersistentString
+               value = "self.view.bounds">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

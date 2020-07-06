@@ -23,7 +23,6 @@ class MapView: MGLMapView {
     
     private func initialize() {
         self.setUserTrackingMode(.follow, animated: false) { }
-        self.isZoomEnabled = false
         self.isPitchEnabled = false
         self.isRotateEnabled = false
         self.isScrollEnabled = false
