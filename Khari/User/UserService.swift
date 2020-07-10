@@ -12,10 +12,13 @@ import Combine
 
 class UserService {
     
-    static func hideFromStranger(username: String, password: String, strangerUsername: String) {
-        AF.request(ServerBaseUrl + "/user/visibility",
+    static func hideFromStranger(username: String,
+                                 password: String,
+                                 strangerUsername: String) {
+        AF.request(ServerBaseUrl + "/user/privacy",
                    method: .post,
-                   parameters: ["mode": "hidden", "target": strangerUsername]).responseJSON { response in
+                   parameters: ["username": username, "password": password, "mode": "hidden", "target": strangerUsername],
+                   encoder: JSONParameterEncoder()).responseJSON { response in
                     
         }
     }

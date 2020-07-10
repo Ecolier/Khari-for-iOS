@@ -69,7 +69,7 @@ class HomeViewController: UIViewController {
         }
         
         self.mapViewController.onStrangerAnnotationSelected = { stranger in
-            self.discoveryViewController = StrangerViewController(stranger)
+            self.discoveryViewController = StrangerViewController(user: self.user, stranger: stranger)
         }
         
         self.userLocationDidUpdateCancellable = self.mapViewController.userLocationDidUpdate.sink { coordinates in
@@ -78,8 +78,6 @@ class HomeViewController: UIViewController {
                              ["username": self.user.username, "password": self.user.password,
                               "latitude": coordinates.latitude, "longitude": coordinates.longitude])
             
-            self.socket.emit("discover strangers",
-                             ["username": self.user.username, "password": self.user.password])
             
         }
     }

@@ -11,12 +11,21 @@ import UIKit
 class StrangerViewController: DiscoveryViewController {
     
     let stranger: Stranger
+    let user: User
+    let strangerView = StrangerView()
     
-    init(_ stranger: Stranger) {
+    init(user: User, stranger: Stranger) {
+        self.user = user
         self.stranger = stranger
-        super.init(discoveryView: StrangerView())
+        super.init(discoveryView: self.strangerView)
         
         self.discoveryView.headerView.usernameLabel.text = self.stranger.username
+        (self.strangerView.blockButton.rightControl as! UISwitch).addTarget(self, action: #selector(switchHiddenMode), for: .valueChanged)
+    }
+    
+    @objc func switchHiddenMode(switchView: UISwitch) {
+        print(switchView)
+        UserService.hideFromStranger(username: self.user.username, password: self.user.password, strangerUsername: self.stranger.username)
     }
     
     required init?(coder: NSCoder) {
