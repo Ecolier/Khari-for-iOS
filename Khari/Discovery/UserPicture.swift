@@ -23,7 +23,7 @@ class UserPicture: UIView {
     }
     
     private func initialize() {
-        self.circleLayer.fillColor = UIColor.secondarySystemFill.cgColor
+        self.circleLayer.fillColor = UIColor.systemGray5.cgColor
         self.layer.addSublayer(self.circleLayer)
     }
     

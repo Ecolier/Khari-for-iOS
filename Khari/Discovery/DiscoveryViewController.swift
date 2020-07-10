@@ -1,19 +1,26 @@
 //
-//  DiscoveryController.swift
+//  DiscoveryViewController.swift
 //  Khari
 //
-//  Created by Evan Gruère on 23/06/2020.
+//  Created by Evan Gruère on 10/07/2020.
 //  Copyright © 2020 Evan Gruère. All rights reserved.
 //
 
 import UIKit
 
-class DiscoveryViewController: CollapsableViewController {
+class DiscoveryViewController: UIViewController {
+    let discoveryView: DiscoveryView
     
-    let discoveryView = DiscoveryView()
-    
-    override func loadView() {
-        self.view = self.discoveryView
+    init(discoveryView: DiscoveryView) {
+        self.discoveryView = discoveryView
+        super.init(nibName: nil, bundle: nil)
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func loadView() {
+        self.view = discoveryView
+    }
 }

@@ -26,8 +26,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             
+            window.rootViewController = LaunchViewController()
+            
             if let authentication = Authentication.fetchCurrentUser() {
-                self.loginCancellable = Authentication.login(username: "28640beb", password: "4c0d61d2").sink { user in
+                self.loginCancellable = Authentication.login(username: "12345678", password: "ABCDEF12").sink { user in
                     window.rootViewController = HomeViewController(user: user, socket: self.socketManager.defaultSocket)
                 }
             }

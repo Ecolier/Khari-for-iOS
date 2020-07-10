@@ -8,20 +8,27 @@
 
 import UIKit
 
-class DiscoveryView: CollapsableView {
-    override init() {
-        super.init()
-        self.initialize()
+class DiscoveryView: UIView {
+    
+    let headerView = DiscoveryHeaderView()
+    
+    init() {
+        super.init(frame: .zero)
+        
+        self.addSubview(self.headerView)
+        
+        self.headerView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            self.headerView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            self.headerView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            self.headerView.topAnchor.constraint(equalTo: self.topAnchor),
+        ])
+        
     }
     
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        self.initialize()
+        fatalError()
     }
     
-    private func initialize() {
-        self.backgroundColor = .white
-        self.layer.cornerRadius = 9
-        self.layer.shadowOpacity = 0.08
-    }
 }

@@ -8,12 +8,20 @@
 
 import UIKit
 
-class StrangerView: UIView {
+class StrangerView: DiscoveryView {
     
-    let userHeader = UserHeader()
+    let messageButton = StackButtonView(
+        leftControl: UIImageView(image: UIImage(systemName: "message.fill")?.withTintColor(.systemGray4, renderingMode: .alwaysOriginal)),
+        rightControl: UIImageView(image: UIImage(systemName: "chevron.right")?.withTintColor(.systemGray4, renderingMode: .alwaysOriginal))
+    )
     
-    init() {
-        super.init(frame: .zero)
+    let blockButton = StackButtonView(
+        leftControl: UIImageView(image: UIImage(systemName: "location.fill")?.withTintColor(.systemGray4, renderingMode: .alwaysOriginal)),
+        rightControl: UISwitch()
+    )
+    
+    override init() {
+        super.init()
         self.initialize()
     }
     
@@ -23,15 +31,24 @@ class StrangerView: UIView {
     }
     
     private func initialize() {
+
+        self.messageButton.label.text = "Send a message"
+        self.blockButton.label.text = "Block user from tracking"
         
-        self.addSubview(self.userHeader)
-        
-        self.userHeader.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(self.messageButton)
+        self.addSubview(self.blockButton)
+    
+        self.messageButton.translatesAutoresizingMaskIntoConstraints = false
+        self.blockButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            self.userHeader.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            self.userHeader.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            self.userHeader.topAnchor.constraint(equalTo: self.topAnchor),
+            self.messageButton.topAnchor.constraint(equalTo: self.headerView.bottomAnchor, constant: 36),
+            self.messageButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 24),
+            self.messageButton.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            
+            self.blockButton.topAnchor.constraint(equalTo: self.messageButton.bottomAnchor, constant: 24),
+            self.blockButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 24),
+            self.blockButton.trailingAnchor.constraint(equalTo: self.trailingAnchor),
         ])
     }
 

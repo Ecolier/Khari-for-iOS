@@ -28,24 +28,12 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
         
         self.mapView.delegate = self
         
-        /**self.generateStrangersCancellable = self.userLocationDidUpdate.sink { coordinates in
-            
-            if self.discoveredStrangers.count < 5 {
-                
-                for _ in 0 ..< 5 {
-                    let stranger = Stranger.random(around: CLLocationCoordinate2D(latitude: self.user.latitude,
-                                                                                  longitude: self.user.longitude), for: 0.5)
-                    self.discoveredStrangers.append(stranger)
-                    let annotation = StrangerAnnotation(stranger: stranger)
-                    annotation.coordinate = CLLocationCoordinate2D(latitude: stranger.latitude, longitude: stranger.longitude)
-                    annotation.title = stranger.identifier
-                    self.mapView.addAnnotation(annotation)
-                }
-                
-            }
-            
-        } **/
-        
+    }
+    
+    func addStranger(_ stranger: Stranger) {
+        let annotation = StrangerAnnotation(stranger: stranger)
+        annotation.coordinate = CLLocationCoordinate2D(latitude: stranger.latitude, longitude: stranger.longitude)
+        self.mapView.addAnnotation(annotation)
     }
     
     func mapView(_ mapView: MGLMapView, didUpdate userLocation: MGLUserLocation?) {

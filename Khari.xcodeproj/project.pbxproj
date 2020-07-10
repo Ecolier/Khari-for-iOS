@@ -8,17 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		20003AF223E1DFEF00C07377 /* EncounterHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20003AF123E1DFEF00C07377 /* EncounterHistory.swift */; };
+		2012220924B8768200B9FB79 /* DiscoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2012220824B8768200B9FB79 /* DiscoveryViewController.swift */; };
 		201A53AC24A0C6C100D4400F /* StrangerAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201A53AB24A0C6C100D4400F /* StrangerAnnotation.swift */; };
-		201A53AE24A1FDF000D4400F /* DiscoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201A53AD24A1FDF000D4400F /* DiscoveryViewController.swift */; };
 		201A53B024A1FF9700D4400F /* DiscoveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201A53AF24A1FF9700D4400F /* DiscoveryView.swift */; };
 		203494C2239D0582009D4F61 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203494C1239D0582009D4F61 /* MapViewController.swift */; };
-		203494C4239D0F6A009D4F61 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203494C3239D0F6A009D4F61 /* UserController.swift */; };
+		203494C4239D0F6A009D4F61 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203494C3239D0F6A009D4F61 /* UserViewController.swift */; };
 		203494CE239E65CA009D4F61 /* StyleSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203494CD239E65CA009D4F61 /* StyleSheet.swift */; };
 		204FE45623B3A6870041C26D /* Khari.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 204FE45423B3A6870041C26D /* Khari.xcdatamodeld */; };
+		205BD7C024B8981E00EFCD07 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205BD7BF24B8981E00EFCD07 /* UserService.swift */; };
 		205DFC6E24ACCA22005C209D /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205DFC6D24ACCA22005C209D /* Authentication.swift */; };
-		20797ABD245C1F5E00DB4D55 /* StrangerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20797ABC245C1F5E00DB4D55 /* StrangerController.swift */; };
+		20797ABD245C1F5E00DB4D55 /* StrangerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20797ABC245C1F5E00DB4D55 /* StrangerViewController.swift */; };
+		208D8E4F24B4EFE5007FD6CB /* StackButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208D8E4E24B4EFE5007FD6CB /* StackButtonView.swift */; };
+		208D8E5124B5AFBE007FD6CB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208D8E5024B5AFBE007FD6CB /* HomeView.swift */; };
+		208D8E5324B5F054007FD6CB /* CoverableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208D8E5224B5F054007FD6CB /* CoverableView.swift */; };
+		208FB5B524B472E500A6304A /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208FB5B424B472E500A6304A /* LaunchViewController.swift */; };
+		208FB5B724B472FE00A6304A /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208FB5B624B472FE00A6304A /* LaunchView.swift */; };
+		208FB5B924B4BEF100A6304A /* TouchIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208FB5B824B4BEF100A6304A /* TouchIndicatorView.swift */; };
 		209FAC41249CFDF900111429 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209FAC40249CFDF900111429 /* UserModel.swift */; };
-		209FAC5B249DDDAF00111429 /* UserHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209FAC55249DDD8000111429 /* UserHeader.swift */; };
+		209FAC5B249DDDAF00111429 /* DiscoveryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209FAC55249DDD8000111429 /* DiscoveryHeaderView.swift */; };
 		209FAC5C249DDDAF00111429 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209FAC59249DDD8100111429 /* UserView.swift */; };
 		209FAC5E249DDDAF00111429 /* UserPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209FAC57249DDD8000111429 /* UserPicture.swift */; };
 		209FAC6224A09A5D00111429 /* CollapsableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209FAC6124A09A5D00111429 /* CollapsableView.swift */; };
@@ -36,8 +43,6 @@
 		20CBA6AE239926EC00FE90F8 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 20CBA6AD239926EC00FE90F8 /* Podfile */; };
 		20CBA6B0239959CB00FE90F8 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CBA6AF239959CB00FE90F8 /* Theme.swift */; };
 		20CBA6B223997BB800FE90F8 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CBA6B123997BB800FE90F8 /* MapView.swift */; };
-		20CD704A24A5D6FD007E607E /* CollapsableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD704924A5D6FD007E607E /* CollapsableViewController.swift */; };
-		20F67E4524A7B30300104516 /* CoverableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F67E4424A7B30300104516 /* CoverableViewController.swift */; };
 		20FE78C024A20BEA00F859D3 /* StrangerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FE78BF24A20BEA00F859D3 /* StrangerView.swift */; };
 		20FE78C224A34FE000F859D3 /* StrangerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FE78C124A34FE000F859D3 /* StrangerModel.swift */; };
 		20FE78C424A36F6C00F859D3 /* Geography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FE78C324A36F6C00F859D3 /* Geography.swift */; };
@@ -65,17 +70,24 @@
 
 /* Begin PBXFileReference section */
 		20003AF123E1DFEF00C07377 /* EncounterHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncounterHistory.swift; sourceTree = "<group>"; };
+		2012220824B8768200B9FB79 /* DiscoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryViewController.swift; sourceTree = "<group>"; };
 		201A53AB24A0C6C100D4400F /* StrangerAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrangerAnnotation.swift; sourceTree = "<group>"; };
-		201A53AD24A1FDF000D4400F /* DiscoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryViewController.swift; sourceTree = "<group>"; };
 		201A53AF24A1FF9700D4400F /* DiscoveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryView.swift; sourceTree = "<group>"; };
 		203494C1239D0582009D4F61 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		203494C3239D0F6A009D4F61 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		203494C3239D0F6A009D4F61 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		203494CD239E65CA009D4F61 /* StyleSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleSheet.swift; sourceTree = "<group>"; };
 		204FE45523B3A6870041C26D /* Khari.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Khari.xcdatamodel; sourceTree = "<group>"; };
+		205BD7BF24B8981E00EFCD07 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		205DFC6D24ACCA22005C209D /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
-		20797ABC245C1F5E00DB4D55 /* StrangerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrangerController.swift; sourceTree = "<group>"; };
+		20797ABC245C1F5E00DB4D55 /* StrangerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrangerViewController.swift; sourceTree = "<group>"; };
+		208D8E4E24B4EFE5007FD6CB /* StackButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackButtonView.swift; sourceTree = "<group>"; };
+		208D8E5024B5AFBE007FD6CB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		208D8E5224B5F054007FD6CB /* CoverableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverableView.swift; sourceTree = "<group>"; };
+		208FB5B424B472E500A6304A /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		208FB5B624B472FE00A6304A /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
+		208FB5B824B4BEF100A6304A /* TouchIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchIndicatorView.swift; sourceTree = "<group>"; };
 		209FAC40249CFDF900111429 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
-		209FAC55249DDD8000111429 /* UserHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHeader.swift; sourceTree = "<group>"; };
+		209FAC55249DDD8000111429 /* DiscoveryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryHeaderView.swift; sourceTree = "<group>"; };
 		209FAC57249DDD8000111429 /* UserPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPicture.swift; sourceTree = "<group>"; };
 		209FAC59249DDD8100111429 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		209FAC6124A09A5D00111429 /* CollapsableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableView.swift; sourceTree = "<group>"; };
@@ -100,9 +112,7 @@
 		20CBA6AD239926EC00FE90F8 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		20CBA6AF239959CB00FE90F8 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		20CBA6B123997BB800FE90F8 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		20CD704924A5D6FD007E607E /* CollapsableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableViewController.swift; sourceTree = "<group>"; };
-		20F67E4424A7B30300104516 /* CoverableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverableViewController.swift; sourceTree = "<group>"; };
-		20FE78BF24A20BEA00F859D3 /* StrangerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrangerView.swift; sourceTree = "<group>"; };
+		20FE78BF24A20BEA00F859D3 /* StrangerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StrangerView.swift; path = Views/StrangerView.swift; sourceTree = "<group>"; };
 		20FE78C124A34FE000F859D3 /* StrangerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrangerModel.swift; sourceTree = "<group>"; };
 		20FE78C324A36F6C00F859D3 /* Geography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geography.swift; sourceTree = "<group>"; };
 		326D872C87D8332736EA156A /* Pods-Khari.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Khari.debug.xcconfig"; path = "Target Support Files/Pods-Khari/Pods-Khari.debug.xcconfig"; sourceTree = "<group>"; };
@@ -147,18 +157,12 @@
 		201A53B124A1FFF300D4400F /* Discovery */ = {
 			isa = PBXGroup;
 			children = (
-				201A53AD24A1FDF000D4400F /* DiscoveryViewController.swift */,
+				209FAC57249DDD8000111429 /* UserPicture.swift */,
+				209FAC55249DDD8000111429 /* DiscoveryHeaderView.swift */,
 				201A53AF24A1FF9700D4400F /* DiscoveryView.swift */,
+				2012220824B8768200B9FB79 /* DiscoveryViewController.swift */,
 			);
 			path = Discovery;
-			sourceTree = "<group>";
-		};
-		2031E4DC24AB24E2001145A8 /* Coverable */ = {
-			isa = PBXGroup;
-			children = (
-				20F67E4424A7B30300104516 /* CoverableViewController.swift */,
-			);
-			path = Coverable;
 			sourceTree = "<group>";
 		};
 		203494D2239E9D09009D4F61 /* Tools */ = {
@@ -178,21 +182,23 @@
 			path = Map;
 			sourceTree = "<group>";
 		};
-		2076525F24A4C2190036B610 /* Views */ = {
+		208FB5B324B472CA00A6304A /* Launch */ = {
 			isa = PBXGroup;
 			children = (
-				20FE78BF24A20BEA00F859D3 /* StrangerView.swift */,
+				208FB5B424B472E500A6304A /* LaunchViewController.swift */,
+				208FB5B624B472FE00A6304A /* LaunchView.swift */,
 			);
-			path = Views;
+			path = Launch;
 			sourceTree = "<group>";
 		};
 		209FAC35249CC46200111429 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				209FAC54249DDD7800111429 /* Views */,
+				209FAC59249DDD8100111429 /* UserView.swift */,
 				205DFC6D24ACCA22005C209D /* Authentication.swift */,
-				203494C3239D0F6A009D4F61 /* UserController.swift */,
+				203494C3239D0F6A009D4F61 /* UserViewController.swift */,
 				209FAC40249CFDF900111429 /* UserModel.swift */,
+				205BD7BF24B8981E00EFCD07 /* UserService.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -200,9 +206,9 @@
 		209FAC3B249CFBB300111429 /* Stranger */ = {
 			isa = PBXGroup;
 			children = (
-				2076525F24A4C2190036B610 /* Views */,
+				20FE78BF24A20BEA00F859D3 /* StrangerView.swift */,
 				201A53AB24A0C6C100D4400F /* StrangerAnnotation.swift */,
-				20797ABC245C1F5E00DB4D55 /* StrangerController.swift */,
+				20797ABC245C1F5E00DB4D55 /* StrangerViewController.swift */,
 				209FAE7A24596E1600730835 /* StrangerGenerator.swift */,
 				20FE78C124A34FE000F859D3 /* StrangerModel.swift */,
 			);
@@ -213,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				20C24952249A7518001705F0 /* HomeViewController.swift */,
+				208D8E5024B5AFBE007FD6CB /* HomeView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -223,16 +230,6 @@
 				20003AF123E1DFEF00C07377 /* EncounterHistory.swift */,
 			);
 			path = Encounters;
-			sourceTree = "<group>";
-		};
-		209FAC54249DDD7800111429 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				209FAC59249DDD8100111429 /* UserView.swift */,
-				209FAC55249DDD8000111429 /* UserHeader.swift */,
-				209FAC57249DDD8000111429 /* UserPicture.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		209FAC6324A0A6A600111429 /* Common */ = {
@@ -272,6 +269,7 @@
 		20CBA679239925FF00FE90F8 /* Khari */ = {
 			isa = PBXGroup;
 			children = (
+				208FB5B324B472CA00A6304A /* Launch */,
 				209FAC6324A0A6A600111429 /* Common */,
 				20CD704B24A5DA88007E607E /* Components */,
 				209FAC3C249CFCD700111429 /* Home */,
@@ -318,20 +316,13 @@
 			path = KhariUITests;
 			sourceTree = "<group>";
 		};
-		20CD704824A5D6E9007E607E /* Collapsable */ = {
-			isa = PBXGroup;
-			children = (
-				209FAC6124A09A5D00111429 /* CollapsableView.swift */,
-				20CD704924A5D6FD007E607E /* CollapsableViewController.swift */,
-			);
-			path = Collapsable;
-			sourceTree = "<group>";
-		};
 		20CD704B24A5DA88007E607E /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				2031E4DC24AB24E2001145A8 /* Coverable */,
-				20CD704824A5D6E9007E607E /* Collapsable */,
+				208D8E5224B5F054007FD6CB /* CoverableView.swift */,
+				209FAC6124A09A5D00111429 /* CollapsableView.swift */,
+				208D8E4E24B4EFE5007FD6CB /* StackButtonView.swift */,
+				208FB5B824B4BEF100A6304A /* TouchIndicatorView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -603,30 +594,35 @@
 			files = (
 				201A53B024A1FF9700D4400F /* DiscoveryView.swift in Sources */,
 				20CBA67B239925FF00FE90F8 /* Application.swift in Sources */,
-				203494C4239D0F6A009D4F61 /* UserController.swift in Sources */,
+				203494C4239D0F6A009D4F61 /* UserViewController.swift in Sources */,
 				20AFD4552488FD87007A54A6 /* Http.swift in Sources */,
 				20003AF223E1DFEF00C07377 /* EncounterHistory.swift in Sources */,
 				20FE78C224A34FE000F859D3 /* StrangerModel.swift in Sources */,
 				209FAC6224A09A5D00111429 /* CollapsableView.swift in Sources */,
 				205DFC6E24ACCA22005C209D /* Authentication.swift in Sources */,
+				208FB5B924B4BEF100A6304A /* TouchIndicatorView.swift in Sources */,
 				20CBA67D239925FF00FE90F8 /* Scene.swift in Sources */,
 				209FAE7B24596E1600730835 /* StrangerGenerator.swift in Sources */,
 				209FAC5C249DDDAF00111429 /* UserView.swift in Sources */,
+				208D8E5324B5F054007FD6CB /* CoverableView.swift in Sources */,
 				201A53AC24A0C6C100D4400F /* StrangerAnnotation.swift in Sources */,
+				208D8E5124B5AFBE007FD6CB /* HomeView.swift in Sources */,
 				203494CE239E65CA009D4F61 /* StyleSheet.swift in Sources */,
-				201A53AE24A1FDF000D4400F /* DiscoveryViewController.swift in Sources */,
+				208FB5B724B472FE00A6304A /* LaunchView.swift in Sources */,
 				209FAC41249CFDF900111429 /* UserModel.swift in Sources */,
 				204FE45623B3A6870041C26D /* Khari.xcdatamodeld in Sources */,
-				209FAC5B249DDDAF00111429 /* UserHeader.swift in Sources */,
+				209FAC5B249DDDAF00111429 /* DiscoveryHeaderView.swift in Sources */,
+				208D8E4F24B4EFE5007FD6CB /* StackButtonView.swift in Sources */,
 				20CBA6B0239959CB00FE90F8 /* Theme.swift in Sources */,
 				20C24953249A7518001705F0 /* HomeViewController.swift in Sources */,
-				20F67E4524A7B30300104516 /* CoverableViewController.swift in Sources */,
-				20797ABD245C1F5E00DB4D55 /* StrangerController.swift in Sources */,
+				208FB5B524B472E500A6304A /* LaunchViewController.swift in Sources */,
+				2012220924B8768200B9FB79 /* DiscoveryViewController.swift in Sources */,
+				20797ABD245C1F5E00DB4D55 /* StrangerViewController.swift in Sources */,
 				20FE78C424A36F6C00F859D3 /* Geography.swift in Sources */,
 				20CBA6B223997BB800FE90F8 /* MapView.swift in Sources */,
+				205BD7C024B8981E00EFCD07 /* UserService.swift in Sources */,
 				203494C2239D0582009D4F61 /* MapViewController.swift in Sources */,
 				209FAC5E249DDDAF00111429 /* UserPicture.swift in Sources */,
-				20CD704A24A5D6FD007E607E /* CollapsableViewController.swift in Sources */,
 				20FE78C024A20BEA00F859D3 /* StrangerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
