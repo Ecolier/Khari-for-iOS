@@ -44,9 +44,12 @@ class HomeViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         
         self.socket.on("strangers discovered") { data, ack in
-            data.forEach {
-                let stranger = Stranger(from: $0 as! [String: Any])
-                self.mapViewController.addStranger(stranger)
+            if self.discoveredStrangers.count < data.count {
+                data.forEach {
+                    let stranger = Stranger(from: $0 as! [String: Any])
+                    self.discoveredStrangers.append(stranger)
+                    self.mapViewController.addStranger(stranger)
+                }
             }
         }
     }

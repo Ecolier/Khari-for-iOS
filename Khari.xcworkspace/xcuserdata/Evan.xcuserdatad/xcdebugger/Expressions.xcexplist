@@ -3,6 +3,17 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "HomeViewController.viewDidLoad():HomeViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "userController.view">
+            </PersistentString>
+            <PersistentString
+               value = "userController.userView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in closure #1 in static Authentication.login(username:password:):Authentication.swift">
          <PersistentStrings>
             <PersistentString
@@ -18,17 +29,6 @@
             </PersistentString>
             <PersistentString
                value = "self.view.bounds">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "HomeViewController.viewDidLoad():HomeViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "userController.view">
-            </PersistentString>
-            <PersistentString
-               value = "userController.userView">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -57,17 +57,6 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "HomeViewController.viewDidLayoutSubviews():HomeViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.discoveryViewController">
-            </PersistentString>
-            <PersistentString
-               value = "self.collapsableViewController">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "HomeView.discoveryView.didset:HomeView.swift">
          <PersistentStrings>
             <PersistentString
@@ -79,6 +68,17 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "HomeViewController.viewDidLayoutSubviews():HomeViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.collapsableViewController">
+            </PersistentString>
+            <PersistentString
+               value = "self.discoveryViewController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in closure #1 in KHRRegister():User.swift">
          <PersistentStrings>
             <PersistentString
@@ -86,6 +86,14 @@
             </PersistentString>
             <PersistentString
                value = "response.value">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in static UserService.isHiddenFrom(username:password:strangerUsername:):UserService.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "$0.value">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -116,6 +124,14 @@
          <PersistentStrings>
             <PersistentString
                value = "self is UILabel">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "static UserService.isHiddenFrom(username:password:strangerUsername:):UserService.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "$0.value">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

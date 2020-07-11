@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import Combine
 
 class StrangerViewController: DiscoveryViewController {
+    
+    private var isHiddenCancellable: AnyCancellable!
     
     let stranger: Stranger
     let user: User
@@ -18,14 +21,32 @@ class StrangerViewController: DiscoveryViewController {
         self.user = user
         self.stranger = stranger
         super.init(discoveryView: self.strangerView)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
         self.discoveryView.headerView.usernameLabel.text = self.stranger.username
-        (self.strangerView.blockButton.rightControl as! UISwitch).addTarget(self, action: #selector(switchHiddenMode), for: .valueChanged)
+        (self.strangerView.blockButton.rightControl as! UISwitch).addTarget(self, action: #selector(switchHiddenMode),
+                                                                            for: .valueChanged)
+        
+        self.isHiddenCancellable = UserService.isHiddenFrom(username: self.user.username,
+                                 password: self.user.password,
+                                 strangerUsername: self.stranger.username)
+            .sink { hidden in
+                hidden ? (self.strangerView.blockButton.rightControl as! UISwitch).setOn(true, animated: false) :
+                    (self.strangerView.blockButton.rightControl as! UISwitch).setOn(false, animated: false)
+        }
     }
     
     @objc func switchHiddenMode(switchView: UISwitch) {
-        print(switchView)
-        UserService.hideFromStranger(username: self.user.username, password: self.user.password, strangerUsername: self.stranger.username)
+        if switchView.isOn {
+            UserService.setHiddenFrom(username: self.user.username, password: self.user.password,
+                                      strangerUsername: self.stranger.username)
+        } else {
+            UserService.setVisibleTo(username: self.user.username, password: self.user.password,
+                                     strangerUsername: self.stranger.username)
+        }
     }
     
     required init?(coder: NSCoder) {
