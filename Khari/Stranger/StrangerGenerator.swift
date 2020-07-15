@@ -18,9 +18,7 @@ extension Stranger {
         let longitude = Double.random(in: boundaries.minLng...boundaries.maxLng)
         let latitude = Double.random(in: boundaries.minLat...boundaries.maxLat)
         return Stranger(username: randomBytes.reduce("", { $0 + String(format: "%02x", $1) }),
-                        longitude: longitude, latitude: latitude,
-                        distance: Geography.distance(between: location,
-                                                     and: CLLocationCoordinate2D(latitude: latitude, longitude: longitude)))
+                        longitude: longitude, latitude: latitude)
     }
         
 }

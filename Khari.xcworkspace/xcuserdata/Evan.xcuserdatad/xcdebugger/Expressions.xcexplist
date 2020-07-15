@@ -17,6 +17,9 @@
          contextName = "closure #1 in closure #1 in static Authentication.login(username:password:):Authentication.swift">
          <PersistentStrings>
             <PersistentString
+               value = "authentication[&quot;hiddenFrom&quot;] as [String]">
+            </PersistentString>
+            <PersistentString
                value = "response.value">
             </PersistentString>
          </PersistentStrings>
@@ -71,10 +74,10 @@
          contextName = "HomeViewController.viewDidLayoutSubviews():HomeViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.collapsableViewController">
+               value = "self.discoveryViewController">
             </PersistentString>
             <PersistentString
-               value = "self.discoveryViewController">
+               value = "self.collapsableViewController">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -109,6 +112,17 @@
          contextName = "MapController.loadView():MapController.swift">
       </ContextState>
       <ContextState
+         contextName = "static UserService.isHiddenFrom(username:password:strangerUsername:):UserService.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "$0.value">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MapController.init():MapController.swift">
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in MapService.updateUserLocation(_:):MapService.swift">
          <PersistentStrings>
             <PersistentString
@@ -117,21 +131,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "MapController.init():MapController.swift">
-      </ContextState>
-      <ContextState
          contextName = "UIView.init(styleSheet:):StyleSheet.swift">
          <PersistentStrings>
             <PersistentString
                value = "self is UILabel">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "static UserService.isHiddenFrom(username:password:strangerUsername:):UserService.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "$0.value">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

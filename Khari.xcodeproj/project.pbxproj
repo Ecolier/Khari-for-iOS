@@ -15,7 +15,7 @@
 		203494C4239D0F6A009D4F61 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203494C3239D0F6A009D4F61 /* UserViewController.swift */; };
 		203494CE239E65CA009D4F61 /* StyleSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203494CD239E65CA009D4F61 /* StyleSheet.swift */; };
 		204FE45623B3A6870041C26D /* Khari.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 204FE45423B3A6870041C26D /* Khari.xcdatamodeld */; };
-		205BD7C024B8981E00EFCD07 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205BD7BF24B8981E00EFCD07 /* UserService.swift */; };
+		205BD7C024B8981E00EFCD07 /* PrivacyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205BD7BF24B8981E00EFCD07 /* PrivacyService.swift */; };
 		205DFC6E24ACCA22005C209D /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205DFC6D24ACCA22005C209D /* Authentication.swift */; };
 		20797ABD245C1F5E00DB4D55 /* StrangerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20797ABC245C1F5E00DB4D55 /* StrangerViewController.swift */; };
 		208D8E4F24B4EFE5007FD6CB /* StackButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208D8E4E24B4EFE5007FD6CB /* StackButtonView.swift */; };
@@ -77,7 +77,7 @@
 		203494C3239D0F6A009D4F61 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		203494CD239E65CA009D4F61 /* StyleSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleSheet.swift; sourceTree = "<group>"; };
 		204FE45523B3A6870041C26D /* Khari.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Khari.xcdatamodel; sourceTree = "<group>"; };
-		205BD7BF24B8981E00EFCD07 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		205BD7BF24B8981E00EFCD07 /* PrivacyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyService.swift; sourceTree = "<group>"; };
 		205DFC6D24ACCA22005C209D /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		20797ABC245C1F5E00DB4D55 /* StrangerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrangerViewController.swift; sourceTree = "<group>"; };
 		208D8E4E24B4EFE5007FD6CB /* StackButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackButtonView.swift; sourceTree = "<group>"; };
@@ -198,7 +198,7 @@
 				205DFC6D24ACCA22005C209D /* Authentication.swift */,
 				203494C3239D0F6A009D4F61 /* UserViewController.swift */,
 				209FAC40249CFDF900111429 /* UserModel.swift */,
-				205BD7BF24B8981E00EFCD07 /* UserService.swift */,
+				205BD7BF24B8981E00EFCD07 /* PrivacyService.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -620,7 +620,7 @@
 				20797ABD245C1F5E00DB4D55 /* StrangerViewController.swift in Sources */,
 				20FE78C424A36F6C00F859D3 /* Geography.swift in Sources */,
 				20CBA6B223997BB800FE90F8 /* MapView.swift in Sources */,
-				205BD7C024B8981E00EFCD07 /* UserService.swift in Sources */,
+				205BD7C024B8981E00EFCD07 /* PrivacyService.swift in Sources */,
 				203494C2239D0582009D4F61 /* MapViewController.swift in Sources */,
 				209FAC5E249DDDAF00111429 /* UserPicture.swift in Sources */,
 				20FE78C024A20BEA00F859D3 /* StrangerView.swift in Sources */,

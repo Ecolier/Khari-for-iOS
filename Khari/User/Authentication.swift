@@ -16,32 +16,32 @@ class Authentication {
             AF.request(ServerBaseUrl + "/auth/register")
                 .publishResponse(using: JSONResponseSerializer())
                 .compactMap { response in
-                    guard let authentication = response.value as? Dictionary<String, Any>,
-                        let username = authentication["username"] as? String,
-                        let password = authentication["password"] as? String else {
-                            return nil
+                    guard let authentication = response.value as? Dictionary<String, Any> else {
+                        return nil
                     }
-                    let user = User(username: username,
-                                       password: password)
-                    return user
+                    let data = try! JSONSerialization.data(withJSONObject: authentication)
+                    return try! JSONDecoder().decode(User.self, from: data)
             }.eraseToAnyPublisher()
         }.eraseToAnyPublisher()
     }
     
     static func login(username: String, password: String) -> AnyPublisher<User, Never> {
-        return Deferred {
-            AF.request(ServerBaseUrl + "/auth/login", method: .post, parameters:
-                ["username": username, "password": password], encoder: JSONParameterEncoder()).publishResponse(using: JSONResponseSerializer())
-                .compactMap { response in
-                    guard let authentication = response.value as? Dictionary<String, Any>,
-                        let username = authentication["username"] as? String,
-                        let password = authentication["password"] as? String else {
-                            return nil
-                    }
-                    let user = User(username: username,
-                                       password: password)
-                    return user
-            }.eraseToAnyPublisher()
+        return AF.request(ServerBaseUrl + "/auth/login", method: .post, parameters:
+            ["username": username, "password": password], encoder: JSONParameterEncoder())
+            .publishResponse(using: JSONResponseSerializer())
+            .compactMap { response in
+                var user: User? = nil
+                guard let authentication = response.value as? Dictionary<String, Any> else {
+                    return nil
+                }
+                do {
+                    let data = try JSONSerialization.data(withJSONObject: authentication)
+                    user = try JSONDecoder().decode(User.self, from: data)
+                } catch {
+                    print(error)
+                }
+                return user
+                
         }.eraseToAnyPublisher()
     }
     
@@ -49,15 +49,11 @@ class Authentication {
         guard let currentUser = UserDefaults.standard.dictionary(forKey: "current user") else {
             return nil
         }
-        
-        return User(username: currentUser["username"] as! String,
-                    password: currentUser["password"] as! String)
+        let data = try! JSONSerialization.data(withJSONObject: currentUser)
+        return try! JSONDecoder().decode(User.self, from: data)
     }
-
+    
     static func saveCurrentUser(_ user: User) {
-        UserDefaults.standard.set([
-            "username": user.username,
-            "password": user.password
-        ], forKey: "current user")
+        UserDefaults.standard.set(user, forKey: "current user")
     }
 }

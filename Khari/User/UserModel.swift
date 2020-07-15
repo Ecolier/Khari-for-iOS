@@ -8,9 +8,10 @@
 
 import Foundation
 
-struct User {
-    var username: String = ""
-    var password: String = ""
-    var latitude: Double = 0
-    var longitude: Double = 0
+struct User: Codable {
+    var username: String
+    var password: String
+    var latitude: Double
+    var longitude: Double
+    var hiddenFrom: [String]?
 }

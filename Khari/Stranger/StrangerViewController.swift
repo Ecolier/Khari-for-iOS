@@ -30,7 +30,7 @@ class StrangerViewController: DiscoveryViewController {
         (self.strangerView.blockButton.rightControl as! UISwitch).addTarget(self, action: #selector(switchHiddenMode),
                                                                             for: .valueChanged)
         
-        self.isHiddenCancellable = UserService.isHiddenFrom(username: self.user.username,
+        self.isHiddenCancellable = PrivacyService.isHiddenFrom(username: self.user.username,
                                  password: self.user.password,
                                  strangerUsername: self.stranger.username)
             .sink { hidden in
@@ -41,10 +41,10 @@ class StrangerViewController: DiscoveryViewController {
     
     @objc func switchHiddenMode(switchView: UISwitch) {
         if switchView.isOn {
-            UserService.setHiddenFrom(username: self.user.username, password: self.user.password,
+            PrivacyService.setHiddenFrom(username: self.user.username, password: self.user.password,
                                       strangerUsername: self.stranger.username)
         } else {
-            UserService.setVisibleTo(username: self.user.username, password: self.user.password,
+            PrivacyService.setVisibleTo(username: self.user.username, password: self.user.password,
                                      strangerUsername: self.stranger.username)
         }
     }

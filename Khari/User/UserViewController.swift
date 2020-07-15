@@ -28,12 +28,14 @@ class UserViewController: DiscoveryViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.getHiddenStrangersCancellable = UserService.getHiddenStrangers(username: self.user.username,
-                                                                            password: self.user.password).sink {
-                                                                                strangers in
-                print(strangers)
+        self.userView.headerView.usernameLabel.text = self.user.username
+        self.userView.blockedLabel.text = "Blocked strangers"
+        
+        if let hiddenFrom = self.user.hiddenFrom {
+            hiddenFrom.forEach { username in
+                self.userView.addBlockedUser(username)
+            }
         }
-        self.discoveryView.headerView.usernameLabel.text = self.user.username
     }
     
 }

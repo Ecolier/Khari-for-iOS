@@ -46,7 +46,8 @@ class HomeViewController: UIViewController {
         self.socket.on("strangers discovered") { data, ack in
             if self.discoveredStrangers.count < data.count {
                 data.forEach {
-                    let stranger = Stranger(from: $0 as! [String: Any])
+                    let data = try! JSONSerialization.data(withJSONObject: $0 as! [String: Any])
+                    let stranger = try! JSONDecoder().decode(Stranger.self, from: data)
                     self.discoveredStrangers.append(stranger)
                     self.mapViewController.addStranger(stranger)
                 }
