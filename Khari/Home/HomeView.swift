@@ -55,7 +55,6 @@ class HomeView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        
         if self.discoveryView.headerView.frame != .zero {
             self.collapsableView.collapsedY = self.bounds.height - self.discoveryView.headerView.frame.height
             self.collapsableView.fullY = self.safeAreaInsets.top

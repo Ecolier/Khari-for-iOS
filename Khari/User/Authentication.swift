@@ -13,7 +13,7 @@ import Alamofire
 class Authentication {
     static func register() -> AnyPublisher<User, Never> {
         return Deferred {
-            AF.request(ServerBaseUrl + "/user")
+            AF.request(ServerBaseUrl + "/auth/register")
                 .publishResponse(using: JSONResponseSerializer())
                 .compactMap { response in
                     guard let authentication = response.value as? Dictionary<String, Any>,
@@ -30,7 +30,7 @@ class Authentication {
     
     static func login(username: String, password: String) -> AnyPublisher<User, Never> {
         return Deferred {
-            AF.request(ServerBaseUrl + "/user", method: .post, parameters:
+            AF.request(ServerBaseUrl + "/auth/login", method: .post, parameters:
                 ["username": username, "password": password], encoder: JSONParameterEncoder()).publishResponse(using: JSONResponseSerializer())
                 .compactMap { response in
                     guard let authentication = response.value as? Dictionary<String, Any>,

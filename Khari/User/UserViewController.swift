@@ -7,15 +7,18 @@
 //
 
 import UIKit
-import CoreLocation
+import Combine
 
 class UserViewController: DiscoveryViewController {
     
+    private var getHiddenStrangersCancellable: AnyCancellable!
+    
     let user: User
+    let userView = UserView()
     
     init(_ user: User) {
         self.user = user
-        super.init(discoveryView: UserView())
+        super.init(discoveryView: self.userView)
     }
     
     required init?(coder: NSCoder) {
@@ -25,7 +28,12 @@ class UserViewController: DiscoveryViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.getHiddenStrangersCancellable = UserService.getHiddenStrangers(username: self.user.username,
+                                                                            password: self.user.password).sink {
+                                                                                strangers in
+                print(strangers)
+        }
         self.discoveryView.headerView.usernameLabel.text = self.user.username
     }
-
+    
 }

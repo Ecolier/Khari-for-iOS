@@ -18,9 +18,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }()
     
     private var loginCancellable: AnyCancellable!
-
+    
     var window: UIWindow?
-
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
         if let windowScene = scene as? UIWindowScene {
@@ -28,10 +28,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             
             window.rootViewController = LaunchViewController()
             
-            if let authentication = Authentication.fetchCurrentUser() {
-                self.loginCancellable = Authentication.login(username: "12345678", password: "ABCDEF12").sink { user in
+            self.loginCancellable = Authentication.login(username: "12345678", password: "ABCDEF12").sink { user in
+                
+                self.socketManager.defaultSocket.on(clientEvent: .connect) { data, ack in
                     window.rootViewController = HomeViewController(user: user, socket: self.socketManager.defaultSocket)
                 }
+                
             }
             
             window.makeKeyAndVisible()
@@ -39,7 +41,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
         
     }
-
+    
     func sceneDidDisconnect(_ scene: UIScene) {
         self.socketManager.defaultSocket.disconnect()
     }
@@ -54,6 +56,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneWillEnterForeground(_ scene: UIScene) { }
     
     func sceneDidEnterBackground(_ scene: UIScene) { }
-
+    
 }
 

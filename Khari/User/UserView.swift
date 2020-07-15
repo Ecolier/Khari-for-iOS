@@ -10,9 +10,14 @@ import UIKit
 
 class UserView: DiscoveryView {
     
+    let blockedLabel = UILabel()
+    
     override init() {
         super.init()
         
+        self.addSubview(self.blockedLabel)
+        
+        self.blockedLabel.translatesAutoresizingMaskIntoConstraints = false
     }
     
     required init?(coder: NSCoder) {
