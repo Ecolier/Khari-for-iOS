@@ -15,7 +15,7 @@ class PrivacyService {
     static func setHiddenFrom(username: String,
                               password: String,
                               strangerUsername: String) {
-        AF.request(ServerBaseUrl + "/user/privacy",
+        AF.request(ServerBaseUrl + "/user/" + username + "/privacy/mode",
                    method: .post,
                    parameters: ["username": username, "password": password,
                                 "mode": "hidden", "target": strangerUsername],
@@ -25,7 +25,7 @@ class PrivacyService {
     static func setVisibleTo(username: String,
                              password: String,
                              strangerUsername: String) {
-        AF.request(ServerBaseUrl + "/user/privacy",
+        AF.request(ServerBaseUrl + "/user/privacy/mode",
                    method: .post,
                    parameters: ["username": username, "password": password,
                                 "mode": "visible", "target": strangerUsername],
@@ -35,7 +35,7 @@ class PrivacyService {
     static func isHiddenFrom(username: String,
                              password: String,
                              strangerUsername: String) -> AnyPublisher<Bool, Never> {
-        AF.request(ServerBaseUrl + "/user/privacy",
+        AF.request(ServerBaseUrl + "/user/" + username + "/privacy/mode",
                    parameters: ["username": username, "password": password,
                                 "target": strangerUsername])
             .publishResponse(using: JSONResponseSerializer())

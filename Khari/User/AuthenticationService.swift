@@ -10,7 +10,7 @@ import Foundation
 import Combine
 import Alamofire
 
-class Authentication {
+class AuthenticationService {
     static func register() -> AnyPublisher<User, Never> {
         return Deferred {
             AF.request(ServerBaseUrl + "/auth/register")

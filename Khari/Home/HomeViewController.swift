@@ -17,8 +17,8 @@ class HomeViewController: UIViewController {
     private var loginCancellable: AnyCancellable!
     
     let homeView: HomeView
-    let user: User
-    let socket: SocketIOClient
+    var user: User!
+    let socket: SocketIOClient!
     
     var discoveryViewController = DiscoveryViewController(discoveryView: UserView()) {
         didSet {
@@ -34,9 +34,8 @@ class HomeViewController: UIViewController {
     let mapViewController = MapViewController()
     var discoveredStrangers = [Stranger]()
     
-    init(user: User, socket: SocketIOClient) {
+    init(socket: SocketIOClient) {
         
-        self.user = user
         self.socket = socket
     
         self.homeView = HomeView(mapView: self.mapViewController.mapView)
