@@ -15,7 +15,9 @@ class AuthenticationViewController: UIViewController {
     let authenticationView = AuthenticationView()
     let homeViewController: HomeViewController
     
+    private var registerCancellable: AnyCancellable!
     private var loginCancellable: AnyCancellable!
+    
     private let socketManager: SocketManager
     
     init(socketManager: SocketManager) {
@@ -53,12 +55,25 @@ class AuthenticationViewController: UIViewController {
     }
     
     @objc func loginAnonymously() {
-        self.loginCancellable = AuthenticationService.login(username: "12345678", password: "ABCDEF12").sink { user in
-            if self.socketManager.defaultSocket.status == .connected {
-                self.homeViewController.user = user
-                self.present(self.homeViewController, animated: true)
+        
+        if let token = AuthenticationService.fetchToken() {
+            
+            self.loginCancellable = AuthenticationService.login(token: token).sink { user in
+                
+                print(user)
+                
             }
+            
+        } else {
+            
+            self.registerCancellable = AuthenticationService.register().sink { token in
+            
+                AuthenticationService.saveToken(token)
+            
+            }
+            
         }
+        
     }
     
     @objc func loginWithFacebook() {

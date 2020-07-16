@@ -14,10 +14,12 @@ class StrangerViewController: DiscoveryViewController {
     private var isHiddenCancellable: AnyCancellable!
     
     let stranger: Stranger
+    let token: String
     let user: User
     let strangerView = StrangerView()
     
-    init(user: User, stranger: Stranger) {
+    init(token: String, user: User, stranger: Stranger) {
+        self.token = token
         self.user = user
         self.stranger = stranger
         super.init(discoveryView: self.strangerView)
@@ -30,8 +32,7 @@ class StrangerViewController: DiscoveryViewController {
         (self.strangerView.blockButton.rightControl as! UISwitch).addTarget(self, action: #selector(switchHiddenMode),
                                                                             for: .valueChanged)
         
-        self.isHiddenCancellable = PrivacyService.isHiddenFrom(username: self.user.username,
-                                 password: self.user.password,
+        self.isHiddenCancellable = PrivacyService.isHiddenFrom(username: self.user.username, token: self.token,
                                  strangerUsername: self.stranger.username)
             .sink { hidden in
                 hidden ? (self.strangerView.blockButton.rightControl as! UISwitch).setOn(true, animated: false) :
@@ -41,10 +42,10 @@ class StrangerViewController: DiscoveryViewController {
     
     @objc func switchHiddenMode(switchView: UISwitch) {
         if switchView.isOn {
-            PrivacyService.setHiddenFrom(username: self.user.username, password: self.user.password,
+            PrivacyService.setHiddenFrom(username: self.user.username, token: self.token,
                                       strangerUsername: self.stranger.username)
         } else {
-            PrivacyService.setVisibleTo(username: self.user.username, password: self.user.password,
+            PrivacyService.setVisibleTo(username: self.user.username, token: self.token,
                                      strangerUsername: self.stranger.username)
         }
     }

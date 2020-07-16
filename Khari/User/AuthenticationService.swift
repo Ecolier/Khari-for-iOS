@@ -11,23 +11,22 @@ import Combine
 import Alamofire
 
 class AuthenticationService {
-    static func register() -> AnyPublisher<User, Never> {
+    static func register() -> AnyPublisher<String, Never> {
         return Deferred {
             AF.request(ServerBaseUrl + "/auth/register")
                 .publishResponse(using: JSONResponseSerializer())
                 .compactMap { response in
-                    guard let authentication = response.value as? Dictionary<String, Any> else {
-                        return nil
+                    guard let authentication = response.value as? Dictionary<String, Any>,
+                        let token = authentication["token"] as? String else {
+                            return nil
                     }
-                    let data = try! JSONSerialization.data(withJSONObject: authentication)
-                    return try! JSONDecoder().decode(User.self, from: data)
+                    return token
             }.eraseToAnyPublisher()
         }.eraseToAnyPublisher()
     }
     
-    static func login(username: String, password: String) -> AnyPublisher<User, Never> {
-        return AF.request(ServerBaseUrl + "/auth/login", method: .post, parameters:
-            ["username": username, "password": password], encoder: JSONParameterEncoder())
+    static func login(token: String) -> AnyPublisher<User, Never> {
+        return AF.request(ServerBaseUrl + "/auth/login", headers: ["Authorization": "Bearer " + token])
             .publishResponse(using: JSONResponseSerializer())
             .compactMap { response in
                 var user: User? = nil
@@ -41,7 +40,6 @@ class AuthenticationService {
                     print(error)
                 }
                 return user
-                
         }.eraseToAnyPublisher()
     }
     
@@ -55,5 +53,13 @@ class AuthenticationService {
     
     static func saveCurrentUser(_ user: User) {
         UserDefaults.standard.set(user, forKey: "current user")
+    }
+    
+    static func fetchToken() -> String? {
+        UserDefaults.standard.string(forKey: "token")
+    }
+    
+    static func saveToken(_ token: String) {
+        UserDefaults.standard.set(token, forKey: "token")
     }
 }

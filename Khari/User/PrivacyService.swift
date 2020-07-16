@@ -12,32 +12,23 @@ import Combine
 
 class PrivacyService {
     
-    static func setHiddenFrom(username: String,
-                              password: String,
-                              strangerUsername: String) {
+    static func setHiddenFrom(username: String, token: String, strangerUsername: String) {
         AF.request(ServerBaseUrl + "/user/" + username + "/privacy/mode",
                    method: .post,
-                   parameters: ["username": username, "password": password,
-                                "mode": "hidden", "target": strangerUsername],
+                   parameters: ["mode": "hidden", "target": strangerUsername],
                    encoder: JSONParameterEncoder()).responseJSON { response in }
     }
     
-    static func setVisibleTo(username: String,
-                             password: String,
-                             strangerUsername: String) {
-        AF.request(ServerBaseUrl + "/user/privacy/mode",
+    static func setVisibleTo(username: String, token: String, strangerUsername: String) {
+        AF.request(ServerBaseUrl + "/user/" + username + "/privacy/mode",
                    method: .post,
-                   parameters: ["username": username, "password": password,
-                                "mode": "visible", "target": strangerUsername],
+                   parameters: ["mode": "visible", "target": strangerUsername],
                    encoder: JSONParameterEncoder()).responseJSON { response in }
     }
     
-    static func isHiddenFrom(username: String,
-                             password: String,
-                             strangerUsername: String) -> AnyPublisher<Bool, Never> {
+    static func isHiddenFrom(username: String, token: String, strangerUsername: String) -> AnyPublisher<Bool, Never> {
         AF.request(ServerBaseUrl + "/user/" + username + "/privacy/mode",
-                   parameters: ["username": username, "password": password,
-                                "target": strangerUsername])
+                   parameters: ["target": strangerUsername])
             .publishResponse(using: JSONResponseSerializer())
             .compactMap({ return $0.value as? Bool })
             .eraseToAnyPublisher()

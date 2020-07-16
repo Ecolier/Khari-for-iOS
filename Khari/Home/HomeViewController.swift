@@ -18,7 +18,8 @@ class HomeViewController: UIViewController {
     
     let homeView: HomeView
     var user: User!
-    let socket: SocketIOClient!
+    var token: String!
+    let socket: SocketIOClient
     
     var discoveryViewController = DiscoveryViewController(discoveryView: UserView()) {
         didSet {
@@ -72,14 +73,13 @@ class HomeViewController: UIViewController {
         }
         
         self.mapViewController.onStrangerAnnotationSelected = { stranger in
-            self.discoveryViewController = StrangerViewController(user: self.user, stranger: stranger)
+            self.discoveryViewController = StrangerViewController(token: self.token, user: self.user, stranger: stranger)
         }
         
         self.userLocationDidUpdateCancellable = self.mapViewController.userLocationDidUpdate.sink { coordinates in
             
             self.socket.emit("update location",
-                             ["username": self.user.username, "password": self.user.password,
-                              "latitude": coordinates.latitude, "longitude": coordinates.longitude])
+                             ["token": self.token, "latitude": coordinates.latitude, "longitude": coordinates.longitude])
             
             
         }
