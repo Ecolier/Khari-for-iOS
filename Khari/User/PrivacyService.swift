@@ -12,32 +12,24 @@ import Combine
 
 class PrivacyService {
     
-    static func setHiddenFrom(username: String,
-                              password: String,
-                              strangerUsername: String) {
-        AF.request(ServerBaseUrl + "/user/privacy",
-                   method: .post,
-                   parameters: ["username": username, "password": password,
-                                "mode": "hidden", "target": strangerUsername],
-                   encoder: JSONParameterEncoder()).responseJSON { response in }
+    static func setHiddenFrom(token: String, strangerUsername: String) {
+        AF.request(ServerBaseUrl + "/user/privacy/mode",
+                   method: .post, parameters: ["mode": "hidden", "target": strangerUsername],
+                   encoder: JSONParameterEncoder(),
+                   headers: ["Authorization": "Bearer " + token]).responseJSON { response in }
     }
     
-    static func setVisibleTo(username: String,
-                             password: String,
-                             strangerUsername: String) {
-        AF.request(ServerBaseUrl + "/user/privacy",
-                   method: .post,
-                   parameters: ["username": username, "password": password,
-                                "mode": "visible", "target": strangerUsername],
-                   encoder: JSONParameterEncoder()).responseJSON { response in }
+    static func setVisibleTo(token: String, strangerUsername: String) {
+        AF.request(ServerBaseUrl + "/user/privacy/mode",
+                   method: .post, parameters: ["mode": "visible", "target": strangerUsername],
+                   encoder: JSONParameterEncoder(),
+                   headers: ["Authorization": "Bearer " + token]).responseJSON { response in }
     }
     
-    static func isHiddenFrom(username: String,
-                             password: String,
-                             strangerUsername: String) -> AnyPublisher<Bool, Never> {
-        AF.request(ServerBaseUrl + "/user/privacy",
-                   parameters: ["username": username, "password": password,
-                                "target": strangerUsername])
+    static func isHiddenFrom(token: String, strangerUsername: String) -> AnyPublisher<Bool, Never> {
+        AF.request(ServerBaseUrl + "/user/privacy/mode",
+                   parameters: ["target": strangerUsername],
+                   headers: ["Authorization": "Bearer " + token])
             .publishResponse(using: JSONResponseSerializer())
             .compactMap({ return $0.value as? Bool })
             .eraseToAnyPublisher()

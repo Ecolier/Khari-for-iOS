@@ -29,13 +29,15 @@ class UserViewController: DiscoveryViewController {
         super.viewDidLoad()
         
         self.userView.headerView.usernameLabel.text = self.user.username
-        self.userView.blockedLabel.text = "Blocked strangers"
         
-        if let hiddenFrom = self.user.hiddenFrom {
-            hiddenFrom.forEach { username in
+        if self.user.hiddenFrom.count > 0 {
+            self.userView.blockedLabel.text = "Blocked strangers"
+            
+            self.user.hiddenFrom.forEach { username in
                 self.userView.addBlockedUser(username)
             }
         }
+        
     }
     
 }

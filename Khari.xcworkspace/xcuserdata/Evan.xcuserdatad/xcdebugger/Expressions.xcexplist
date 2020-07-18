@@ -52,6 +52,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "closure #1 in closure #1 in static AuthenticationService.register():AuthenticationService.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "response.value">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "KHRSetConnectedUser(_:in:):User.swift">
          <PersistentStrings>
             <PersistentString
@@ -80,6 +88,9 @@
                value = "self.collapsableViewController">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #3 in HomeViewController.viewDidLoad():HomeViewController.swift">
       </ContextState>
       <ContextState
          contextName = "closure #1 in closure #1 in KHRRegister():User.swift">
@@ -204,6 +215,9 @@
                value = "self.name.textColor">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in AuthenticationViewController.loginAnonymously():AuthenticationViewController.swift">
       </ContextState>
       <ContextState
          contextName = "closure #1 in closure #1 in KHRApplicationDelegate.connect():Application.swift">

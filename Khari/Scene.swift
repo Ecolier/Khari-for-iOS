@@ -8,7 +8,6 @@
 
 import UIKit
 import SwiftUI
-import Combine
 import SocketIO
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -17,25 +16,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         return SocketManager(socketURL: URL(string: ServerBaseUrl)!)
     }()
     
-    private var loginCancellable: AnyCancellable!
-    
     var window: UIWindow?
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            
-            window.rootViewController = LaunchViewController()
-            
-            self.loginCancellable = Authentication.login(username: "12345678", password: "ABCDEF12").sink { user in
-                
-                self.socketManager.defaultSocket.on(clientEvent: .connect) { data, ack in
-                    window.rootViewController = HomeViewController(user: user, socket: self.socketManager.defaultSocket)
-                }
-                
-            }
-            
+            window.rootViewController = AuthenticationViewController(socketManager: self.socketManager)
             window.makeKeyAndVisible()
             self.window = window
         }
@@ -48,7 +35,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func sceneDidBecomeActive(_ scene: UIScene) {
         self.socketManager.defaultSocket.connect()
-        
     }
     
     func sceneWillResignActive(_ scene: UIScene) { }

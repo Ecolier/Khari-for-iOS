@@ -10,8 +10,7 @@ import Foundation
 
 struct User: Codable {
     var username: String
-    var password: String
     var latitude: Double
     var longitude: Double
-    var hiddenFrom: [String]?
+    var hiddenFrom: [String]
 }
