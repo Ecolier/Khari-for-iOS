@@ -10,11 +10,20 @@ import Foundation
 import Combine
 import Alamofire
 
+enum ResponseError: Error {
+    case malformedResponse
+}
+
+enum LoginError: Error {
+    case responseError(error: ResponseError)
+    case wrongCredentials
+}
+
 class AuthenticationService {
     static func register() -> AnyPublisher<String, Never> {
-        return Deferred {
-            AF.request(ServerBaseUrl + "/auth/register")
+            return AF.request(ServerBaseUrl + "/auth/register")
                 .publishResponse(using: JSONResponseSerializer())
+                .subscribe(on: DispatchQueue.global())
                 .compactMap { response in
                     guard let authentication = response.value as? Dictionary<String, Any>,
                         let token = authentication["token"] as? String else {
@@ -22,25 +31,23 @@ class AuthenticationService {
                     }
                     return token
             }.eraseToAnyPublisher()
-        }.eraseToAnyPublisher()
     }
     
-    static func login(token: String) -> AnyPublisher<User, Never> {
+    static func login(with token: String) -> AnyPublisher<User, LoginError> {
         return AF.request(ServerBaseUrl + "/auth/login", headers: ["Authorization": "Bearer " + token])
             .publishResponse(using: JSONResponseSerializer())
-            .compactMap { response in
-                var user: User? = nil
+            .tryMap { response in
                 guard let authentication = response.value as? Dictionary<String, Any> else {
-                    return nil
+                    throw LoginError.responseError(error: ResponseError.malformedResponse)
                 }
+                var user: User
                 do {
                     let data = try JSONSerialization.data(withJSONObject: authentication)
                     user = try JSONDecoder().decode(User.self, from: data)
-                } catch {
-                    print(error)
-                }
+                } catch { throw LoginError.responseError(error: ResponseError.malformedResponse) }
                 return user
-        }.eraseToAnyPublisher()
+        }.mapError { error -> LoginError in return LoginError.wrongCredentials }
+        .eraseToAnyPublisher()
     }
     
     static func fetchCurrentUser() -> User? {
@@ -59,7 +66,7 @@ class AuthenticationService {
         UserDefaults.standard.string(forKey: "token")
     }
     
-    static func saveToken(_ token: String) {
+    static func saveToken(_ token: String?) {
         UserDefaults.standard.set(token, forKey: "token")
     }
 }

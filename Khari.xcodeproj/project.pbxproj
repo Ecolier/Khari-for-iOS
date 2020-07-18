@@ -201,7 +201,6 @@
 			isa = PBXGroup;
 			children = (
 				209FAC59249DDD8100111429 /* UserView.swift */,
-				205DFC6D24ACCA22005C209D /* AuthenticationService.swift */,
 				203494C3239D0F6A009D4F61 /* UserViewController.swift */,
 				209FAC40249CFDF900111429 /* UserModel.swift */,
 				205BD7BF24B8981E00EFCD07 /* PrivacyService.swift */,
@@ -253,6 +252,7 @@
 				20A3B0BC24C031CB00394509 /* AuthenticationViewController.swift */,
 				20A3B0BF24C031FD00394509 /* AuthenticationView.swift */,
 				20A1C63C24C0333200A87608 /* AuthenticationButton.swift */,
+				205DFC6D24ACCA22005C209D /* AuthenticationService.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -285,9 +285,9 @@
 		20CBA679239925FF00FE90F8 /* Khari */ = {
 			isa = PBXGroup;
 			children = (
+				209FAC6324A0A6A600111429 /* Common */,
 				20A3B0BE24C031D000394509 /* Authentication */,
 				208FB5B324B472CA00A6304A /* Launch */,
-				209FAC6324A0A6A600111429 /* Common */,
 				20CD704B24A5DA88007E607E /* Components */,
 				209FAC3C249CFCD700111429 /* Home */,
 				205FB57024A209E6009912D0 /* Map */,

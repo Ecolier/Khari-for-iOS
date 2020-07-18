@@ -58,18 +58,25 @@ class AuthenticationViewController: UIViewController {
         
         if let token = AuthenticationService.fetchToken() {
             
-            self.loginCancellable = AuthenticationService.login(token: token).sink { user in
-                
-                print(user)
-                
-            }
+            self.loginCancellable = AuthenticationService.login(with: token)
+                .sink(receiveCompletion: { completion in
+                    switch completion {
+                    case .finished: break
+                    case .failure(_):
+                        AuthenticationService.saveToken(nil)
+                        self.loginAnonymously()
+                    }
+                }, receiveValue: {
+                    self.homeViewController.token = token
+                    self.homeViewController.user = $0
+                    self.present(self.homeViewController, animated: true)
+                })
             
         } else {
             
             self.registerCancellable = AuthenticationService.register().sink { token in
-            
                 AuthenticationService.saveToken(token)
-            
+                self.loginAnonymously()
             }
             
         }

@@ -17,10 +17,10 @@
          contextName = "closure #1 in closure #1 in static Authentication.login(username:password:):Authentication.swift">
          <PersistentStrings>
             <PersistentString
-               value = "response.value">
+               value = "authentication[&quot;hiddenFrom&quot;] as [String]">
             </PersistentString>
             <PersistentString
-               value = "authentication[&quot;hiddenFrom&quot;] as [String]">
+               value = "response.value">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -82,12 +82,15 @@
          contextName = "HomeViewController.viewDidLayoutSubviews():HomeViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.collapsableViewController">
-            </PersistentString>
-            <PersistentString
                value = "self.discoveryViewController">
             </PersistentString>
+            <PersistentString
+               value = "self.collapsableViewController">
+            </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #3 in HomeViewController.viewDidLoad():HomeViewController.swift">
       </ContextState>
       <ContextState
          contextName = "closure #1 in closure #1 in KHRRegister():User.swift">

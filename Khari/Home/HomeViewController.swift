@@ -78,8 +78,10 @@ class HomeViewController: UIViewController {
         
         self.userLocationDidUpdateCancellable = self.mapViewController.userLocationDidUpdate.sink { coordinates in
             
-            self.socket.emit("update location",
-                             ["token": self.token, "latitude": coordinates.latitude, "longitude": coordinates.longitude])
+            self.socket.emit(
+                "update location",
+                ["token": self.token, "latitude": coordinates.latitude, "longitude": coordinates.longitude]
+            )
             
             
         }
