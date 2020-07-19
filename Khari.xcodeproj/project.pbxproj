@@ -184,6 +184,7 @@
 			children = (
 				20CBA6B123997BB800FE90F8 /* MapView.swift */,
 				203494C1239D0582009D4F61 /* MapViewController.swift */,
+				201A53AB24A0C6C100D4400F /* StrangerAnnotation.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -212,7 +213,6 @@
 			isa = PBXGroup;
 			children = (
 				20FE78BF24A20BEA00F859D3 /* StrangerView.swift */,
-				201A53AB24A0C6C100D4400F /* StrangerAnnotation.swift */,
 				20797ABC245C1F5E00DB4D55 /* StrangerViewController.swift */,
 				209FAE7A24596E1600730835 /* StrangerGenerator.swift */,
 				20FE78C124A34FE000F859D3 /* StrangerModel.swift */,

@@ -43,6 +43,16 @@ class HomeViewController: UIViewController {
         
         super.init(nibName: nil, bundle: nil)
         
+        self.socket.on("stranger location updated") { data, ack in
+            if let stranger = data[0] as? [String: Any] {
+                do {
+                    let data = try JSONSerialization.data(withJSONObject: stranger)
+                    let stranger = try JSONDecoder().decode(Stranger.self, from: data)
+                    self.mapViewController.updateStrangerAnnotationLocation(with: stranger)
+                } catch { print(error) }
+            }
+        }
+        
         self.socket.on("strangers discovered") { data, ack in
             if self.discoveredStrangers.count < data.count {
                 data.forEach {

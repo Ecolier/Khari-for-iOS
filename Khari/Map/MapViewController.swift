@@ -30,6 +30,19 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
         
     }
     
+    func updateStrangerAnnotationLocation(with stranger: Stranger) {
+        if let annotations = self.mapView.annotations as? [StrangerAnnotation] {
+            annotations.forEach { annotation in
+                if annotation.stranger.username == stranger.username {
+                    UIView.animate(withDuration: 2) {
+                        annotation.coordinate = CLLocationCoordinate2D(latitude: stranger.latitude,
+                                                                       longitude: stranger.longitude)
+                    }
+                }
+            }
+        }
+    }
+    
     func addStranger(_ stranger: Stranger) {
         let annotation = StrangerAnnotation(stranger: stranger)
         annotation.coordinate = CLLocationCoordinate2D(latitude: stranger.latitude, longitude: stranger.longitude)

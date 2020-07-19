@@ -15,6 +15,7 @@ class AuthenticationViewController: UIViewController {
     let authenticationView = AuthenticationView()
     let homeViewController: HomeViewController
     
+    private var isLoggedIn = false
     private var registerCancellable: AnyCancellable!
     private var loginCancellable: AnyCancellable!
     
@@ -56,6 +57,10 @@ class AuthenticationViewController: UIViewController {
     
     @objc func loginAnonymously() {
         
+        if self.isLoggedIn {
+            return
+        }
+        
         if let token = AuthenticationService.fetchToken() {
             
             self.loginCancellable = AuthenticationService.login(with: token)
@@ -64,19 +69,24 @@ class AuthenticationViewController: UIViewController {
                     case .finished: break
                     case .failure(_):
                         AuthenticationService.saveToken(nil)
-                        self.loginAnonymously()
+                        return self.loginAnonymously()
                     }
                 }, receiveValue: {
+                    self.isLoggedIn = true
                     self.homeViewController.token = token
                     self.homeViewController.user = $0
-                    self.present(self.homeViewController, animated: true)
+                    return self.present(self.homeViewController, animated: true)
                 })
             
         } else {
             
+            if self.isLoggedIn {
+                return
+            }
+            
             self.registerCancellable = AuthenticationService.register().sink { token in
                 AuthenticationService.saveToken(token)
-                self.loginAnonymously()
+                return self.loginAnonymously()
             }
             
         }
