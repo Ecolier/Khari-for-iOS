@@ -9,7 +9,7 @@
 import UIKit
 import Combine
 
-class StrangerViewController: DiscoveryViewController {
+class StrangerViewController: UIViewController {
     
     private var isHiddenCancellable: AnyCancellable!
     
@@ -22,13 +22,12 @@ class StrangerViewController: DiscoveryViewController {
         self.token = token
         self.user = user
         self.stranger = stranger
-        super.init(discoveryView: self.strangerView)
+        super.init(nibName: nil, bundle: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.discoveryView.headerView.usernameLabel.text = self.stranger.username
         (self.strangerView.blockButton.rightControl as! UISwitch).addTarget(self, action: #selector(switchHiddenMode),
                                                                             for: .valueChanged)
         

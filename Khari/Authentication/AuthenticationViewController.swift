@@ -13,23 +13,10 @@ import SocketIO
 class AuthenticationViewController: UIViewController {
     
     let authenticationView = AuthenticationView()
-    let homeViewController: HomeViewController
     
     private var isLoggedIn = false
     private var registerCancellable: AnyCancellable!
     private var loginCancellable: AnyCancellable!
-    
-    private let socketManager: SocketManager
-    
-    init(socketManager: SocketManager) {
-        self.socketManager = socketManager
-        self.homeViewController = HomeViewController(socket: socketManager.defaultSocket)
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     override func loadView() {
         self.view = self.authenticationView
@@ -37,8 +24,6 @@ class AuthenticationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.homeViewController.modalPresentationStyle = .fullScreen
         
         self.authenticationView.titleLabel.text = "Khari"
         self.authenticationView.subtitleLabel.text = "Networking, human-sized"
@@ -56,26 +41,23 @@ class AuthenticationViewController: UIViewController {
     }
     
     @objc func loginAnonymously() {
-        
-        if self.isLoggedIn {
-            return
-        }
-        
-        if let token = AuthenticationService.fetchToken() {
+         
+        if let token = AuthenticationRepository.fetchToken() {
             
             self.loginCancellable = AuthenticationService.login(with: token)
                 .sink(receiveCompletion: { completion in
                     switch completion {
                     case .finished: break
                     case .failure(_):
-                        AuthenticationService.saveToken(nil)
+                        AuthenticationRepository.saveToken(nil)
                         return self.loginAnonymously()
                     }
                 }, receiveValue: {
                     self.isLoggedIn = true
-                    self.homeViewController.token = token
-                    self.homeViewController.user = $0
-                    return self.present(self.homeViewController, animated: true)
+                    AuthenticationRepository.saveUser($0)
+                    let homeViewController = HomeViewController()
+                    homeViewController.modalPresentationStyle = .fullScreen
+                    return self.present(homeViewController, animated: true)
                 })
             
         } else {
@@ -85,7 +67,7 @@ class AuthenticationViewController: UIViewController {
             }
             
             self.registerCancellable = AuthenticationService.register().sink { token in
-                AuthenticationService.saveToken(token)
+                AuthenticationRepository.saveToken(token)
                 return self.loginAnonymously()
             }
             

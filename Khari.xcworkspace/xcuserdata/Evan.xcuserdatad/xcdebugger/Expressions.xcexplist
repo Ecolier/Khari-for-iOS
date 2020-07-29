@@ -3,13 +3,16 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "closure #1 in AuthenticationViewController.loginAnonymously():AuthenticationViewController.swift">
+      </ContextState>
+      <ContextState
          contextName = "HomeViewController.viewDidLoad():HomeViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "userController.view">
+               value = "self.discoveryViewController.view">
             </PersistentString>
             <PersistentString
-               value = "userController.userView">
+               value = "self.discoveryViewController.discoveryView">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -44,18 +47,21 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "HomeView.updateConstraints():HomeView.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.discoveryView.frame">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "static AuthenticationRepository.saveUser(_:):AuthenticationRepository.swift">
       </ContextState>
       <ContextState
          contextName = "closure #1 in closure #1 in static AuthenticationService.register():AuthenticationService.swift">
          <PersistentStrings>
             <PersistentString
                value = "response.value">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "HomeView.updateConstraints():HomeView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.discoveryView.frame">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -71,7 +77,7 @@
          contextName = "HomeView.discoveryView.didset:HomeView.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.discoveryView.headerView.frame">
+               value = "self.discoveryView">
             </PersistentString>
             <PersistentString
                value = "self.collapsableView.bounds">
@@ -93,6 +99,14 @@
          contextName = "closure #3 in HomeViewController.viewDidLoad():HomeViewController.swift">
       </ContextState>
       <ContextState
+         contextName = "closure #1 in static UserService.isHiddenFrom(username:password:strangerUsername:):UserService.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "$0.value">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in closure #1 in KHRRegister():User.swift">
          <PersistentStrings>
             <PersistentString
@@ -104,10 +118,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in static UserService.isHiddenFrom(username:password:strangerUsername:):UserService.swift">
+         contextName = "HomeViewController.discoveryViewController.didset:HomeViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "$0.value">
+               value = "self.discoveryViewController.detailViewController.detailView">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -150,6 +164,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "closure #1 in closure #1 in KHRApplicationDelegate.connect():Application.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "scene.activationState">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in closure #1 in closure #1 in SceneDelegate.scene(_:willConnectTo:options:):SceneDelegate.swift">
          <PersistentStrings>
             <PersistentString
@@ -177,7 +199,7 @@
          contextName = "HomeView.layoutSubviews():HomeView.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.discoveryView.headerView.frame">
+               value = "self.discoveryView.frame">
             </PersistentString>
             <PersistentString
                value = "self.collapsableView.frame">
@@ -201,6 +223,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "static AuthenticationRepository.fetchUser():AuthenticationRepository.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "UserDefaults.standard.data(forKey: &quot;user&quot;)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "StyleSheet.isSupported(_:):StyleSheet.swift">
          <PersistentStrings>
             <PersistentString
@@ -209,21 +239,18 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "UserHeader.init(name:location:):UserView.swift">
+         contextName = "DiscoveryHeaderViewController.viewDidLoad():DiscoveryHeaderViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.name.textColor">
+               value = "AuthenticationReposity.fetchUser()">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in AuthenticationViewController.loginAnonymously():AuthenticationViewController.swift">
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in closure #1 in KHRApplicationDelegate.connect():Application.swift">
+         contextName = "UserHeader.init(name:location:):UserView.swift">
          <PersistentStrings>
             <PersistentString
-               value = "scene.activationState">
+               value = "self.name.textColor">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

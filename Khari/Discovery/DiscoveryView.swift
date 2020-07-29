@@ -10,25 +10,32 @@ import UIKit
 
 class DiscoveryView: UIView {
     
-    let headerView = DiscoveryHeaderView()
+    private(set) var discoveryHeaderView = DiscoveryHeaderView()
+    private(set) var userView = UIView()
     
-    init() {
-        super.init(frame: .zero)
-        
-        self.addSubview(self.headerView)
-        
-        self.headerView.translatesAutoresizingMaskIntoConstraints = false
-        
+    func setDiscoveryHeaderView(_ view: DiscoveryHeaderView) {
+        self.discoveryHeaderView.removeFromSuperview()
+        self.addSubview(view)
+        view.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            self.headerView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            self.headerView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            self.headerView.topAnchor.constraint(equalTo: self.topAnchor),
+            view.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            view.topAnchor.constraint(equalTo: self.topAnchor),
+            view.trailingAnchor.constraint(equalTo: self.trailingAnchor),
         ])
-        
+        self.discoveryHeaderView = view
     }
     
-    required init?(coder: NSCoder) {
-        fatalError()
+    func setUserView(_ view: UIView) {
+        self.userView.removeFromSuperview()
+        self.addSubview(view)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            view.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            view.topAnchor.constraint(equalTo: self.discoveryHeaderView.bottomAnchor),
+            view.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            view.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+        ])
+        self.userView = view
     }
     
 }

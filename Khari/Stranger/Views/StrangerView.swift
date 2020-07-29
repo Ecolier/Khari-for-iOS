@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StrangerView: DiscoveryView {
+class StrangerView: UIView {
     
     let messageButton = StackButtonView(
         leftControl: UIImageView(image: UIImage(systemName: "message.fill")?.withTintColor(.systemGray4, renderingMode: .alwaysOriginal)),
@@ -20,8 +20,8 @@ class StrangerView: DiscoveryView {
         rightControl: UISwitch()
     )
     
-    override init() {
-        super.init()
+    init() {
+        super.init(frame: .zero)
         self.initialize()
     }
     
@@ -42,7 +42,7 @@ class StrangerView: DiscoveryView {
         self.blockButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            self.messageButton.topAnchor.constraint(equalTo: self.headerView.bottomAnchor, constant: 36),
+            self.messageButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 36),
             self.messageButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 24),
             self.messageButton.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             

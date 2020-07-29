@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		20003AF223E1DFEF00C07377 /* EncounterHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20003AF123E1DFEF00C07377 /* EncounterHistory.swift */; };
 		2012220924B8768200B9FB79 /* DiscoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2012220824B8768200B9FB79 /* DiscoveryViewController.swift */; };
+		2019414424C4A2CD00B8EE13 /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2019414324C4A2CD00B8EE13 /* UserDetailsViewController.swift */; };
+		2019414624C4A2DE00B8EE13 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2019414524C4A2DE00B8EE13 /* MessageViewController.swift */; };
+		2019414824C5AA2400B8EE13 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2019414724C5AA2400B8EE13 /* DetailViewController.swift */; };
+		2019414A24C5AAA600B8EE13 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2019414924C5AAA600B8EE13 /* DetailView.swift */; };
+		2019414E24C76DFD00B8EE13 /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2019414D24C76DFD00B8EE13 /* SocketManager.swift */; };
+		2019415024C88C1F00B8EE13 /* AuthenticationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2019414F24C88C1F00B8EE13 /* AuthenticationRepository.swift */; };
 		201A53AC24A0C6C100D4400F /* StrangerAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201A53AB24A0C6C100D4400F /* StrangerAnnotation.swift */; };
 		201A53B024A1FF9700D4400F /* DiscoveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201A53AF24A1FF9700D4400F /* DiscoveryView.swift */; };
 		203494C2239D0582009D4F61 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203494C1239D0582009D4F61 /* MapViewController.swift */; };
@@ -27,7 +33,7 @@
 		209FAC41249CFDF900111429 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209FAC40249CFDF900111429 /* UserModel.swift */; };
 		209FAC5B249DDDAF00111429 /* DiscoveryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209FAC55249DDD8000111429 /* DiscoveryHeaderView.swift */; };
 		209FAC5C249DDDAF00111429 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209FAC59249DDD8100111429 /* UserView.swift */; };
-		209FAC5E249DDDAF00111429 /* UserPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209FAC57249DDD8000111429 /* UserPicture.swift */; };
+		209FAC5E249DDDAF00111429 /* DiscoveryPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209FAC57249DDD8000111429 /* DiscoveryPicture.swift */; };
 		209FAC6224A09A5D00111429 /* CollapsableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209FAC6124A09A5D00111429 /* CollapsableView.swift */; };
 		209FAE7B24596E1600730835 /* StrangerGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209FAE7A24596E1600730835 /* StrangerGenerator.swift */; };
 		20A1C63D24C0333200A87608 /* AuthenticationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A1C63C24C0333200A87608 /* AuthenticationButton.swift */; };
@@ -46,6 +52,7 @@
 		20CBA6AE239926EC00FE90F8 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 20CBA6AD239926EC00FE90F8 /* Podfile */; };
 		20CBA6B0239959CB00FE90F8 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CBA6AF239959CB00FE90F8 /* Theme.swift */; };
 		20CBA6B223997BB800FE90F8 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CBA6B123997BB800FE90F8 /* MapView.swift */; };
+		20DB91B724C9D265002C87DF /* DiscoveryHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DB91B624C9D265002C87DF /* DiscoveryHeaderViewController.swift */; };
 		20FE78C024A20BEA00F859D3 /* StrangerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FE78BF24A20BEA00F859D3 /* StrangerView.swift */; };
 		20FE78C224A34FE000F859D3 /* StrangerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FE78C124A34FE000F859D3 /* StrangerModel.swift */; };
 		20FE78C424A36F6C00F859D3 /* Geography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FE78C324A36F6C00F859D3 /* Geography.swift */; };
@@ -74,6 +81,12 @@
 /* Begin PBXFileReference section */
 		20003AF123E1DFEF00C07377 /* EncounterHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncounterHistory.swift; sourceTree = "<group>"; };
 		2012220824B8768200B9FB79 /* DiscoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryViewController.swift; sourceTree = "<group>"; };
+		2019414324C4A2CD00B8EE13 /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
+		2019414524C4A2DE00B8EE13 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		2019414724C5AA2400B8EE13 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		2019414924C5AAA600B8EE13 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		2019414D24C76DFD00B8EE13 /* SocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketManager.swift; sourceTree = "<group>"; };
+		2019414F24C88C1F00B8EE13 /* AuthenticationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRepository.swift; sourceTree = "<group>"; };
 		201A53AB24A0C6C100D4400F /* StrangerAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrangerAnnotation.swift; sourceTree = "<group>"; };
 		201A53AF24A1FF9700D4400F /* DiscoveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryView.swift; sourceTree = "<group>"; };
 		203494C1239D0582009D4F61 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -91,7 +104,7 @@
 		208FB5B824B4BEF100A6304A /* TouchIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchIndicatorView.swift; sourceTree = "<group>"; };
 		209FAC40249CFDF900111429 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		209FAC55249DDD8000111429 /* DiscoveryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryHeaderView.swift; sourceTree = "<group>"; };
-		209FAC57249DDD8000111429 /* UserPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPicture.swift; sourceTree = "<group>"; };
+		209FAC57249DDD8000111429 /* DiscoveryPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryPicture.swift; sourceTree = "<group>"; };
 		209FAC59249DDD8100111429 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		209FAC6124A09A5D00111429 /* CollapsableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableView.swift; sourceTree = "<group>"; };
 		209FAE7A24596E1600730835 /* StrangerGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrangerGenerator.swift; sourceTree = "<group>"; };
@@ -118,6 +131,7 @@
 		20CBA6AD239926EC00FE90F8 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		20CBA6AF239959CB00FE90F8 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		20CBA6B123997BB800FE90F8 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		20DB91B624C9D265002C87DF /* DiscoveryHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryHeaderViewController.swift; sourceTree = "<group>"; };
 		20FE78BF24A20BEA00F859D3 /* StrangerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StrangerView.swift; path = Views/StrangerView.swift; sourceTree = "<group>"; };
 		20FE78C124A34FE000F859D3 /* StrangerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrangerModel.swift; sourceTree = "<group>"; };
 		20FE78C324A36F6C00F859D3 /* Geography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geography.swift; sourceTree = "<group>"; };
@@ -163,10 +177,13 @@
 		201A53B124A1FFF300D4400F /* Discovery */ = {
 			isa = PBXGroup;
 			children = (
-				209FAC57249DDD8000111429 /* UserPicture.swift */,
+				209FAC57249DDD8000111429 /* DiscoveryPicture.swift */,
 				209FAC55249DDD8000111429 /* DiscoveryHeaderView.swift */,
 				201A53AF24A1FF9700D4400F /* DiscoveryView.swift */,
 				2012220824B8768200B9FB79 /* DiscoveryViewController.swift */,
+				20DB91B624C9D265002C87DF /* DiscoveryHeaderViewController.swift */,
+				2019414724C5AA2400B8EE13 /* DetailViewController.swift */,
+				2019414924C5AAA600B8EE13 /* DetailView.swift */,
 			);
 			path = Discovery;
 			sourceTree = "<group>";
@@ -203,6 +220,8 @@
 			children = (
 				209FAC59249DDD8100111429 /* UserView.swift */,
 				203494C3239D0F6A009D4F61 /* UserViewController.swift */,
+				2019414324C4A2CD00B8EE13 /* UserDetailsViewController.swift */,
+				2019414524C4A2DE00B8EE13 /* MessageViewController.swift */,
 				209FAC40249CFDF900111429 /* UserModel.swift */,
 				205BD7BF24B8981E00EFCD07 /* PrivacyService.swift */,
 			);
@@ -242,6 +261,7 @@
 			children = (
 				20FE78C324A36F6C00F859D3 /* Geography.swift */,
 				20AFD4542488FD86007A54A6 /* Http.swift */,
+				2019414D24C76DFD00B8EE13 /* SocketManager.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -253,6 +273,7 @@
 				20A3B0BF24C031FD00394509 /* AuthenticationView.swift */,
 				20A1C63C24C0333200A87608 /* AuthenticationButton.swift */,
 				205DFC6D24ACCA22005C209D /* AuthenticationService.swift */,
+				2019414F24C88C1F00B8EE13 /* AuthenticationRepository.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -616,12 +637,14 @@
 				20AFD4552488FD87007A54A6 /* Http.swift in Sources */,
 				20003AF223E1DFEF00C07377 /* EncounterHistory.swift in Sources */,
 				20FE78C224A34FE000F859D3 /* StrangerModel.swift in Sources */,
+				2019414A24C5AAA600B8EE13 /* DetailView.swift in Sources */,
 				209FAC6224A09A5D00111429 /* CollapsableView.swift in Sources */,
 				205DFC6E24ACCA22005C209D /* AuthenticationService.swift in Sources */,
 				208FB5B924B4BEF100A6304A /* TouchIndicatorView.swift in Sources */,
 				20CBA67D239925FF00FE90F8 /* Scene.swift in Sources */,
 				209FAE7B24596E1600730835 /* StrangerGenerator.swift in Sources */,
 				209FAC5C249DDDAF00111429 /* UserView.swift in Sources */,
+				20DB91B724C9D265002C87DF /* DiscoveryHeaderViewController.swift in Sources */,
 				208D8E5324B5F054007FD6CB /* CoverableView.swift in Sources */,
 				201A53AC24A0C6C100D4400F /* StrangerAnnotation.swift in Sources */,
 				208D8E5124B5AFBE007FD6CB /* HomeView.swift in Sources */,
@@ -633,16 +656,21 @@
 				208D8E4F24B4EFE5007FD6CB /* StackButtonView.swift in Sources */,
 				20CBA6B0239959CB00FE90F8 /* Theme.swift in Sources */,
 				20C24953249A7518001705F0 /* HomeViewController.swift in Sources */,
+				2019414E24C76DFD00B8EE13 /* SocketManager.swift in Sources */,
+				2019415024C88C1F00B8EE13 /* AuthenticationRepository.swift in Sources */,
 				208FB5B524B472E500A6304A /* LaunchViewController.swift in Sources */,
+				2019414624C4A2DE00B8EE13 /* MessageViewController.swift in Sources */,
 				2012220924B8768200B9FB79 /* DiscoveryViewController.swift in Sources */,
+				2019414424C4A2CD00B8EE13 /* UserDetailsViewController.swift in Sources */,
 				20797ABD245C1F5E00DB4D55 /* StrangerViewController.swift in Sources */,
+				2019414824C5AA2400B8EE13 /* DetailViewController.swift in Sources */,
 				20FE78C424A36F6C00F859D3 /* Geography.swift in Sources */,
 				20CBA6B223997BB800FE90F8 /* MapView.swift in Sources */,
 				20A3B0BD24C031CC00394509 /* AuthenticationViewController.swift in Sources */,
 				205BD7C024B8981E00EFCD07 /* PrivacyService.swift in Sources */,
 				20A3B0C024C031FD00394509 /* AuthenticationView.swift in Sources */,
 				203494C2239D0582009D4F61 /* MapViewController.swift in Sources */,
-				209FAC5E249DDDAF00111429 /* UserPicture.swift in Sources */,
+				209FAC5E249DDDAF00111429 /* DiscoveryPicture.swift in Sources */,
 				20FE78C024A20BEA00F859D3 /* StrangerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

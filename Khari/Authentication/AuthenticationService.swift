@@ -20,6 +20,7 @@ enum LoginError: Error {
 }
 
 class AuthenticationService {
+
     static func register() -> AnyPublisher<String, Never> {
             return AF.request(ServerBaseUrl + "/auth/register")
                 .publishResponse(using: JSONResponseSerializer())
@@ -50,23 +51,4 @@ class AuthenticationService {
         .eraseToAnyPublisher()
     }
     
-    static func fetchCurrentUser() -> User? {
-        guard let currentUser = UserDefaults.standard.dictionary(forKey: "current user") else {
-            return nil
-        }
-        let data = try! JSONSerialization.data(withJSONObject: currentUser)
-        return try! JSONDecoder().decode(User.self, from: data)
-    }
-    
-    static func saveCurrentUser(_ user: User) {
-        UserDefaults.standard.set(user, forKey: "current user")
-    }
-    
-    static func fetchToken() -> String? {
-        UserDefaults.standard.string(forKey: "token")
-    }
-    
-    static func saveToken(_ token: String?) {
-        UserDefaults.standard.set(token, forKey: "token")
-    }
 }

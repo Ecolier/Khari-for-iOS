@@ -8,13 +8,13 @@
 
 import UIKit
 
-class UserView: DiscoveryView {
+class UserView: UIView {
     
     let blockedLabel = UILabel()
     private var blockedUsers: [StackButtonView] = []
     
-    override init() {
-        super.init()
+    init() {
+        super.init(frame: .zero)
         
         self.blockedLabel.font = .boldSystemFont(ofSize: 24)
         
@@ -23,7 +23,7 @@ class UserView: DiscoveryView {
         self.blockedLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            self.blockedLabel.topAnchor.constraint(equalTo: self.headerView.bottomAnchor, constant: 18),
+            self.blockedLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 18),
             self.blockedLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 24),
         ])
     }

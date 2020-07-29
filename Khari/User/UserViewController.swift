@@ -9,35 +9,23 @@
 import UIKit
 import Combine
 
-class UserViewController: DiscoveryViewController {
+class UserViewController: UITabBarController {
     
-    private var getHiddenStrangersCancellable: AnyCancellable!
-    
-    let user: User
-    let userView = UserView()
-    
-    init(_ user: User) {
-        self.user = user
-        super.init(discoveryView: self.userView)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    let detailViewController = DetailViewController()
+    let messageViewController = MessageViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.userView.headerView.usernameLabel.text = self.user.username
+        self.detailViewController.tabBarItem = UITabBarItem(title: "user",
+                                                            image: UIImage(systemName: "person.fill"),
+                                                            tag: 0)
         
-        if self.user.hiddenFrom.count > 0 {
-            self.userView.blockedLabel.text = "Blocked strangers"
-            
-            self.user.hiddenFrom.forEach { username in
-                self.userView.addBlockedUser(username)
-            }
-        }
+        self.messageViewController.tabBarItem = UITabBarItem(title: "message",
+                                                            image: UIImage(systemName: "message.fill"),
+                                                            tag: 1)
         
+        self.setViewControllers([self.detailViewController, self.messageViewController], animated: true)
     }
     
 }

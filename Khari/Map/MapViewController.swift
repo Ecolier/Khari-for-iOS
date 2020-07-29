@@ -15,19 +15,48 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
     
     let mapView = MapView()
     
+    private var userLocationDidUpdateCancellable: AnyCancellable!
+    private var strangerLocationUpdatedCancellable: AnyCancellable!
+    private var strangersDiscoveredCancellable: AnyCancellable!
+    
     private lazy var userLocationDidUpdateSubject = PassthroughSubject<CLLocationCoordinate2D, Never>()
     lazy var userLocationDidUpdate = self.userLocationDidUpdateSubject.eraseToAnyPublisher()
-    
-    private var generateStrangersCancellable: AnyCancellable!
-    
+
     var onUserAnnotationSelected: () -> Void = { }
     var onStrangerAnnotationSelected: (Stranger) -> Void = { _ in }
+    
+    
     
     init() {
         super.init(nibName: nil, bundle: nil)
         
         self.mapView.delegate = self
         
+        self.strangerLocationUpdatedCancellable = SocketManager.shared().onStrangerLocationUpdated.sink { stranger in
+            self.updateStrangerAnnotationLocation(with: stranger)
+        }
+        
+        self.strangersDiscoveredCancellable = SocketManager.shared().onStrangerDiscovered.sink { stranger in
+            self.addStranger(stranger)
+        }
+        
+        self.userLocationDidUpdateCancellable = self.userLocationDidUpdate.sink { coordinates in
+            guard let token = AuthenticationRepository.fetchToken() else { return }
+            SocketManager.shared().updateUserLocation(token: token,
+                                                      longitude: coordinates.longitude,
+                                                      latitude: coordinates.latitude)
+        }
+    }
+    
+    func strangerExists(_ username: String) -> Bool {
+        if let annotations = self.mapView.annotations as? [StrangerAnnotation] {
+            for annotation in annotations {
+                if annotation.stranger.username == username {
+                    return true
+                }
+            }
+        }
+        return false
     }
     
     func updateStrangerAnnotationLocation(with stranger: Stranger) {
@@ -44,6 +73,9 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
     }
     
     func addStranger(_ stranger: Stranger) {
+        if self.strangerExists(stranger.username) {
+            return
+        }
         let annotation = StrangerAnnotation(stranger: stranger)
         annotation.coordinate = CLLocationCoordinate2D(latitude: stranger.latitude, longitude: stranger.longitude)
         self.mapView.addAnnotation(annotation)

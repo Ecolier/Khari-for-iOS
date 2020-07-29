@@ -12,17 +12,13 @@ import SocketIO
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
-    lazy var socketManager: SocketManager = {
-        return SocketManager(socketURL: URL(string: ServerBaseUrl)!)
-    }()
-    
     var window: UIWindow?
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = AuthenticationViewController(socketManager: self.socketManager)
+            window.rootViewController = AuthenticationViewController()
             window.makeKeyAndVisible()
             self.window = window
         }
@@ -30,11 +26,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {
-        self.socketManager.defaultSocket.disconnect()
+        SocketManager.shared().disconnect()
     }
     
     func sceneDidBecomeActive(_ scene: UIScene) {
-        self.socketManager.defaultSocket.connect()
+        SocketManager.shared().connect()
     }
     
     func sceneWillResignActive(_ scene: UIScene) { }
