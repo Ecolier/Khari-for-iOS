@@ -55,7 +55,8 @@ class AuthenticationViewController: UIViewController {
                 }, receiveValue: {
                     self.isLoggedIn = true
                     AuthenticationRepository.saveUser($0)
-                    let homeViewController = HomeViewController()
+                    SocketManager.shared().createChatroom(token: token)
+                    let homeViewController = HomeViewController(with: $0)
                     homeViewController.modalPresentationStyle = .fullScreen
                     return self.present(homeViewController, animated: true)
                 })

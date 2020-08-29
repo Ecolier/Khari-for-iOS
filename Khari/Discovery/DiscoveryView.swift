@@ -8,34 +8,37 @@
 
 import UIKit
 
-class DiscoveryView: UIView {
+class DiscoveryView: CollapsableView {
     
-    private(set) var discoveryHeaderView = DiscoveryHeaderView()
-    private(set) var userView = UIView()
+    var discoveryHeaderView = DiscoveryHeaderView()
     
-    func setDiscoveryHeaderView(_ view: DiscoveryHeaderView) {
-        self.discoveryHeaderView.removeFromSuperview()
-        self.addSubview(view)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            view.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            view.topAnchor.constraint(equalTo: self.topAnchor),
-            view.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-        ])
-        self.discoveryHeaderView = view
+    var contentView = UIView() {
+        didSet {
+            oldValue.removeFromSuperview()
+            self.addSubview(self.contentView)
+            self.contentView.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                self.contentView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+                self.contentView.topAnchor.constraint(equalTo: self.discoveryHeaderView.bottomAnchor),
+                self.contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+                self.contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            ])
+        }
     }
     
-    func setUserView(_ view: UIView) {
-        self.userView.removeFromSuperview()
-        self.addSubview(view)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            view.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            view.topAnchor.constraint(equalTo: self.discoveryHeaderView.bottomAnchor),
-            view.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            view.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-        ])
-        self.userView = view
+    override init() {
+        super.init()
+        self.addSubview(self.discoveryHeaderView)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        self.discoveryHeaderView.frame.size.width = self.bounds.width
     }
     
 }

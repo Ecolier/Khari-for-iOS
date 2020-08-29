@@ -12,10 +12,30 @@ import CoreLocation
 
 class HomeViewController: UIViewController {
     
+    let user: User
     let homeView = HomeView()
     
-    var discoveryViewController = DiscoveryViewController()
     let mapViewController = MapViewController()
+    
+    var discoveryViewController: DiscoveryViewController! {
+        didSet {
+            oldValue.removeFromParent()
+            oldValue.didMove(toParent: nil)
+            self.addChild(discoveryViewController)
+            self.homeView.discoveryView = discoveryViewController.view as? DiscoveryView
+            discoveryViewController.didMove(toParent: self)
+        }
+    }
+    
+    init(with user: User) {
+        self.user = user
+        self.discoveryViewController = UserDiscoveryViewController(with: user)
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func loadView() {
         self.view = self.homeView
@@ -25,37 +45,18 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         self.addChild(self.mapViewController)
-        self.homeView.setMapView(self.mapViewController.view)
+        self.homeView.mapView = self.mapViewController.view as? MapView
         self.mapViewController.didMove(toParent: self)
         
-        self.addChild(self.discoveryViewController)
-        self.homeView.setDiscoveryView(self.discoveryViewController.view as! DiscoveryView)
-        self.discoveryViewController.didMove(toParent: self)
-        
-        guard let token = AuthenticationRepository.fetchToken(),
-            let user = AuthenticationRepository.fetchUser() else { return }
-        
-        self.discoveryViewController.discoveryHeaderViewController.headerView.usernameLabel.text = user.username
-        self.discoveryViewController.setUserViewController(UserViewController())
+        self.discoveryViewController = UserDiscoveryViewController(with: self.user)
         
         self.mapViewController.onUserAnnotationSelected = {
-            guard let token = AuthenticationRepository.fetchToken(),
-                let user = AuthenticationRepository.fetchUser() else { return }
-            self.discoveryViewController.discoveryHeaderViewController.headerView.usernameLabel.text = user.username
-            self.discoveryViewController.setUserViewController(UserViewController())
+            guard let user = AuthenticationRepository.fetchUser() else { return }
+            self.discoveryViewController = UserDiscoveryViewController(with: user)
         }
         
         self.mapViewController.onStrangerAnnotationSelected = { stranger in
-            guard let token = AuthenticationRepository.fetchToken(),
-                let user = AuthenticationRepository.fetchUser() else { return }
-            self.discoveryViewController.discoveryHeaderViewController.headerView.usernameLabel.text = stranger.username
-            self.discoveryViewController.setUserViewController(
-                StrangerViewController(token: token,
-                                       user: user,
-                                       stranger: stranger)
-            )
+            self.discoveryViewController = StrangerDiscoveryViewController(with: stranger)
         }
-        
-        
     }
 }

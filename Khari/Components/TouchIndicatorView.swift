@@ -9,9 +9,8 @@
 import UIKit
 
 class TouchIndicatorView: UIView {
-    
-    init() {
-        super.init(frame: CGRect(x: 0, y: 0, width: 20, height: 6))
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         self.backgroundColor = UIColor.systemGray3
         self.layer.cornerRadius = 3
     }

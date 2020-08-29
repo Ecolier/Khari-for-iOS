@@ -18,11 +18,20 @@ class SocketManager {
     
     private lazy var strangerLocationUpdatedSubject = PassthroughSubject<Stranger, Never>()
     private lazy var strangerDiscoveredSubject = PassthroughSubject<Stranger, Never>()
+    private lazy var messageReceivedSubject = PassthroughSubject<String, Never>()
     
     lazy var onStrangerLocationUpdated = self.strangerLocationUpdatedSubject.eraseToAnyPublisher()
     lazy var onStrangerDiscovered = self.strangerDiscoveredSubject.eraseToAnyPublisher()
+    lazy var onMessageReceived = self.messageReceivedSubject.eraseToAnyPublisher()
     
     private init() {
+        
+        self.socket.on("message received") { data, ack in
+            if let message = data[0] as? String {
+                self.messageReceivedSubject.send(message)
+            }
+        }
+        
         self.socket.on("stranger location updated") { data, ack in
             if let stranger = data[0] as? [String: Any] {
                 do {
@@ -46,8 +55,16 @@ class SocketManager {
         }
     }
     
+    func createChatroom(token: String) {
+        self.socket.emit("create chatroom", ["token": token])
+    }
+    
     func updateUserLocation(token: String, longitude: Double, latitude: Double) {
         self.socket.emit("update location", ["token": token, "latitude": latitude, "longitude": longitude])
+    }
+    
+    func sendMessage(token: String, target: String, message: String) {
+        self.socket.emit("send message", ["token": token, "target": target, "message": message])
     }
     
     static func shared() -> SocketManager { return self.instance }

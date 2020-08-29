@@ -12,17 +12,21 @@ import Combine
 class StrangerViewController: UIViewController {
     
     private var isHiddenCancellable: AnyCancellable!
-    
-    let stranger: Stranger
-    let token: String
-    let user: User
     let strangerView = StrangerView()
     
-    init(token: String, user: User, stranger: Stranger) {
-        self.token = token
-        self.user = user
+    var stranger: Stranger
+    
+    init(stranger: Stranger) {
         self.stranger = stranger
         super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func loadView() {
+        self.view = self.strangerView
     }
     
     override func viewDidLoad() {
@@ -31,7 +35,9 @@ class StrangerViewController: UIViewController {
         (self.strangerView.blockButton.rightControl as! UISwitch).addTarget(self, action: #selector(switchHiddenMode),
                                                                             for: .valueChanged)
         
-        self.isHiddenCancellable = PrivacyService.isHiddenFrom(token: self.token,
+        guard let token = AuthenticationRepository.fetchToken() else { return }
+        
+        self.isHiddenCancellable = PrivacyService.isHiddenFrom(token: token,
                                  strangerUsername: self.stranger.username)
             .sink { hidden in
                 hidden ? (self.strangerView.blockButton.rightControl as! UISwitch).setOn(true, animated: false) :
@@ -40,15 +46,13 @@ class StrangerViewController: UIViewController {
     }
     
     @objc func switchHiddenMode(switchView: UISwitch) {
+        
+        guard let token = AuthenticationRepository.fetchToken() else { return }
+        
         if switchView.isOn {
-            PrivacyService.setHiddenFrom(token: self.token, strangerUsername: self.stranger.username)
+            PrivacyService.setHiddenFrom(token: token, strangerUsername: self.stranger.username)
         } else {
-            PrivacyService.setVisibleTo(token: self.token, strangerUsername: self.stranger.username)
+            PrivacyService.setVisibleTo(token: token, strangerUsername: self.stranger.username)
         }
     }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
 }

@@ -3,7 +3,50 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "closure #1 in AuthenticationViewController.loginAnonymously():AuthenticationViewController.swift">
+         contextName = "KHRMapController.viewDidLayoutSubviews():MapController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.view.frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MapController.init():MapController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "DiscoveryViewController.interactionControllerForPresentation(using:):DiscoveryViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "KHRSetConnectedUser(_:in:):User.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "userEntity.username">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in closure #1 in SceneDelegate.scene(_:willConnectTo:options:):SceneDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "response.data">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DiscoveryView.init():DiscoveryView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.discoveryHeaderView.usernameLabel.intrinsicContentSize">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CollapsableView.layoutSubviews():CollapsableView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.containerFrame.size">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "HomeViewController.viewDidLoad():HomeViewController.swift">
@@ -17,15 +60,23 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in closure #1 in static Authentication.login(username:password:):Authentication.swift">
+         contextName = "static AuthenticationRepository.fetchUser():AuthenticationRepository.swift">
          <PersistentStrings>
             <PersistentString
-               value = "authentication[&quot;hiddenFrom&quot;] as [String]">
-            </PersistentString>
-            <PersistentString
-               value = "response.value">
+               value = "UserDefaults.standard.data(forKey: &quot;user&quot;)">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DiscoveryView.layoutSubviews():DiscoveryView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.discoveryHeaderView.frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DiscoveryViewController.animationController(forPresented:presenting:source:):DiscoveryViewController.swift">
       </ContextState>
       <ContextState
          contextName = "KHRMapController.viewDidLoad():MapController.swift">
@@ -39,10 +90,34 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "KHRMapController.viewDidLayoutSubviews():MapController.swift">
+         contextName = "closure #1 in static UserService.isHiddenFrom(username:password:strangerUsername:):UserService.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.view.frame">
+               value = "$0.value">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "static UserService.isHiddenFrom(username:password:strangerUsername:):UserService.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "$0.value">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in KHRRequestCreateUser():Http.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "$0.data">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MapService.updateUserLocation(_:):MapService.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "user.name">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -50,59 +125,18 @@
          contextName = "static AuthenticationRepository.saveUser(_:):AuthenticationRepository.swift">
       </ContextState>
       <ContextState
-         contextName = "closure #1 in closure #1 in static AuthenticationService.register():AuthenticationService.swift">
+         contextName = "StyleSheet.isSupported(_:):StyleSheet.swift">
          <PersistentStrings>
             <PersistentString
-               value = "response.value">
+               value = "supported.isEmpty()">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "HomeView.updateConstraints():HomeView.swift">
+         contextName = "UserHeader.init(name:location:):UserView.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.discoveryView.frame">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "KHRSetConnectedUser(_:in:):User.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "userEntity.username">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "HomeView.discoveryView.didset:HomeView.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.discoveryView">
-            </PersistentString>
-            <PersistentString
-               value = "self.collapsableView.bounds">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "HomeViewController.viewDidLayoutSubviews():HomeViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.discoveryViewController">
-            </PersistentString>
-            <PersistentString
-               value = "self.collapsableViewController">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #3 in HomeViewController.viewDidLoad():HomeViewController.swift">
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in static UserService.isHiddenFrom(username:password:strangerUsername:):UserService.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "$0.value">
+               value = "self.name.textColor">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -118,10 +152,80 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "HomeViewController.discoveryViewController.didset:HomeViewController.swift">
+         contextName = "HomeView.setDiscoveryView(_:):HomeView.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.discoveryViewController.detailViewController.detailView">
+               value = "">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "HomeViewController.viewDidLayoutSubviews():HomeViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.discoveryViewController">
+            </PersistentString>
+            <PersistentString
+               value = "self.collapsableViewController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DiscoveryHeaderView.layoutSubviews():DiscoveryHeaderView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.frame.size.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DiscoveryHeaderView.init():DiscoveryHeaderView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.usernameLabelFontSize">
+            </PersistentString>
+            <PersistentString
+               value = "self.usernameLabel.font.pointSize">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in MapService.updateUserLocation(_:):MapService.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "data">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in static AuthenticationService.register():AuthenticationService.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "response.value">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "KHRRequestCreateUser():Network.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "result.sink">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #2 in KHRAppDelegate.application(_:didFinishLaunchingWithOptions:):AppDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "user.value">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DiscoveryHeaderViewController.viewDidLoad():DiscoveryHeaderViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "AuthenticationReposity.fetchUser()">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -137,21 +241,13 @@
          contextName = "MapController.loadView():MapController.swift">
       </ContextState>
       <ContextState
-         contextName = "static UserService.isHiddenFrom(username:password:strangerUsername:):UserService.swift">
+         contextName = "closure #1 in closure #1 in static Authentication.login(username:password:):Authentication.swift">
          <PersistentStrings>
             <PersistentString
-               value = "$0.value">
+               value = "authentication[&quot;hiddenFrom&quot;] as [String]">
             </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "MapController.init():MapController.swift">
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in MapService.updateUserLocation(_:):MapService.swift">
-         <PersistentStrings>
             <PersistentString
-               value = "data">
+               value = "response.value">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -164,6 +260,39 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "HomeView.updateConstraints():HomeView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.discoveryView.frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "HomeView.discoveryView.didset:HomeView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.discoveryView">
+            </PersistentString>
+            <PersistentString
+               value = "self.collapsableView.bounds">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #3 in HomeViewController.viewDidLoad():HomeViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in AuthenticationViewController.loginAnonymously():AuthenticationViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "HomeViewController.discoveryViewController.didset:HomeViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.discoveryViewController.detailViewController.detailView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in closure #1 in KHRApplicationDelegate.connect():Application.swift">
          <PersistentStrings>
             <PersistentString
@@ -172,85 +301,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in closure #1 in closure #1 in SceneDelegate.scene(_:willConnectTo:options:):SceneDelegate.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "response.data">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #2 in KHRAppDelegate.application(_:didFinishLaunchingWithOptions:):AppDelegate.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "user.value">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in closure #1 in KHRRequestCreateUser():Http.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "$0.data">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "HomeView.layoutSubviews():HomeView.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.discoveryView.frame">
-            </PersistentString>
-            <PersistentString
-               value = "self.collapsableView.frame">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "MapService.updateUserLocation(_:):MapService.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "user.name">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "KHRRequestCreateUser():Network.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "result.sink">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "static AuthenticationRepository.fetchUser():AuthenticationRepository.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "UserDefaults.standard.data(forKey: &quot;user&quot;)">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "StyleSheet.isSupported(_:):StyleSheet.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "supported.isEmpty()">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DiscoveryHeaderViewController.viewDidLoad():DiscoveryHeaderViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "AuthenticationReposity.fetchUser()">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "UserHeader.init(name:location:):UserView.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.name.textColor">
+               value = "self.discoveryView.discoveryHeaderView.frame">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

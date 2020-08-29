@@ -12,7 +12,7 @@ import Combine
 class UserViewController: UITabBarController {
     
     let detailViewController = DetailViewController()
-    let messageViewController = MessageViewController()
+    let messageViewController = UIViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()

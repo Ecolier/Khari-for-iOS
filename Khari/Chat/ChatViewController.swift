@@ -9,11 +9,11 @@
 import UIKit
 import Combine
 
-class MessageViewController: UIViewController {
+class ChatViewController: UIViewController {
     
     private var messageReceivedCancellable: AnyCancellable!
     
-    let messageView = MessageView()
+    let chatView = ChatView()
     let target: String
     
     init(target: String) {
@@ -26,23 +26,29 @@ class MessageViewController: UIViewController {
     }
     
     override func loadView() {
-        self.view = self.messageView
+        self.view = self.chatView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.messageReceivedCancellable = SocketManager.shared().onMessageReceived.sink { message in 
-            print(message)
+        self.messageReceivedCancellable = SocketManager.shared().onMessageReceived.sink { message in
+            self.chatView.addMessage(message, direction: .received)
         }
         
-        self.messageView.rulesLabel.text = "You can send one and only one message to this person"
-        self.messageView.sendIcon.isUserInteractionEnabled = true
-        self.messageView.sendIcon.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(sendMessage)))
+        self.chatView.rulesLabel.text = "You can send one and only one message to this person"
+        self.chatView.messageListView.keyboardDismissMode = .interactive
+        self.chatView.composeView.sendIcon.isUserInteractionEnabled = true
+        self.chatView.composeView.sendIcon.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(sendMessage)))
     }
     
     @objc func sendMessage() {
+        if self.chatView.composeView.text.isEmpty {
+            return
+        }
         guard let token = AuthenticationRepository.fetchToken() else { return }
-        SocketManager.shared().sendMessage(token: token, target: self.target, message: self.messageView.composeView.text)
+        SocketManager.shared().sendMessage(token: token, target: self.target, message: self.chatView.composeView.text!)
+        self.chatView.addMessage(self.chatView.composeView.text!, direction: .sent)
+        self.chatView.composeView.text.removeAll()
     }
 }

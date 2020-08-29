@@ -8,12 +8,18 @@
 
 import UIKit
 
-class MessageView: UIView {
+enum MessageDirection {
+    case received
+    case sent
+}
+
+class ChatView: UIView {
     
-    let messages = [UIMessage]
+    let messageListView = MessageListView()
     let rulesLabel = UILabel()
-    let composeView = UITextView()
-    let sendIcon = UIImageView(image: UIImage(systemName: "arrow.up.circle.fill"))
+    let composeView = ComposeView()
+    
+    private var composeViewBottomAnchor: NSLayoutConstraint!
     
     var lastKeyboardOffset: CGFloat = 0.0
     
@@ -22,12 +28,10 @@ class MessageView: UIView {
         
         self.addSubview(self.rulesLabel)
         self.addSubview(self.composeView)
-        self.addSubview(self.sendIcon)
         
         self.composeView.layer.cornerRadius = 6
         self.composeView.backgroundColor = .systemGray6
         self.composeView.font = .systemFont(ofSize: 16)
-        self.composeView.textContainerInset = UIEdgeInsets(top: 15, left: 9, bottom: 12, right: 9)
         
         self.rulesLabel.textColor = .systemGray3
         self.rulesLabel.textAlignment = .center
@@ -35,26 +39,37 @@ class MessageView: UIView {
         
         self.rulesLabel.translatesAutoresizingMaskIntoConstraints = false
         self.composeView.translatesAutoresizingMaskIntoConstraints = false
-        self.sendIcon.translatesAutoresizingMaskIntoConstraints = false
+        self.messageListView.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.composeViewBottomAnchor = self.composeView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -18)
         
         NSLayoutConstraint.activate([
             self.rulesLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             self.rulesLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 48),
             self.rulesLabel.widthAnchor.constraint(lessThanOrEqualTo: self.widthAnchor, multiplier: 0.75),
             
-            self.composeView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -18),
+            self.composeViewBottomAnchor,
             self.composeView.heightAnchor.constraint(equalToConstant: 48),
             self.composeView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 18),
             self.composeView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -18),
-            
-            self.sendIcon.centerYAnchor.constraint(equalTo: self.composeView.centerYAnchor),
-            self.sendIcon.trailingAnchor.constraint(equalTo: self.composeView.trailingAnchor, constant: -9),
-            self.sendIcon.widthAnchor.constraint(equalToConstant: 36),
-            self.sendIcon.heightAnchor.constraint(equalToConstant: 36),
         ])
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    func addMessage(_ message: String, direction: MessageDirection) {
+        if rulesLabel.superview == self {
+            rulesLabel.removeFromSuperview()
+            self.addSubview(self.messageListView)
+            NSLayoutConstraint.activate([
+                self.messageListView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+                self.messageListView.topAnchor.constraint(equalTo: self.topAnchor),
+                self.messageListView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+                self.messageListView.bottomAnchor.constraint(equalTo: self.composeView.topAnchor, constant: -18)
+            ])
+        }
+        self.messageListView.addMessage(message, direction: direction)
     }
     
     required init?(coder: NSCoder) {
@@ -63,13 +78,17 @@ class MessageView: UIView {
     
     @objc func keyboardWillShow(notification: NSNotification) {
         lastKeyboardOffset = getKeyboardHeight(notification: notification)
-        self.composeView.frame.origin.y -= lastKeyboardOffset
-        self.sendIcon.frame.origin.y -= lastKeyboardOffset
+        self.composeViewBottomAnchor.constant -= lastKeyboardOffset
+        UIView.animate(withDuration: 0.5) {
+            self.layoutIfNeeded()
+        }
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
-        self.composeView.frame.origin.y += lastKeyboardOffset
-        self.sendIcon.frame.origin.y += lastKeyboardOffset
+        self.composeViewBottomAnchor.constant += lastKeyboardOffset
+        UIView.animate(withDuration: 0.5) {
+            self.layoutIfNeeded()
+        }
     }
     
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {
