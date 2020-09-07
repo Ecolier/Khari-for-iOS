@@ -13,23 +13,15 @@ import CoreLocation
 class HomeViewController: UIViewController {
     
     let user: User
-    let homeView = HomeView()
     
     let mapViewController = MapViewController()
+    private(set) var discoveryHeaderViewController = DiscoveryHeaderViewController()
+    var discoveryViewController = DiscoveryViewController()
     
-    var discoveryViewController: DiscoveryViewController! {
-        didSet {
-            oldValue.removeFromParent()
-            oldValue.didMove(toParent: nil)
-            self.addChild(discoveryViewController)
-            self.homeView.discoveryView = discoveryViewController.view as? DiscoveryView
-            discoveryViewController.didMove(toParent: self)
-        }
-    }
+    let homeView = HomeView()
     
     init(with user: User) {
         self.user = user
-        self.discoveryViewController = UserDiscoveryViewController(with: user)
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -48,15 +40,45 @@ class HomeViewController: UIViewController {
         self.homeView.mapView = self.mapViewController.view as? MapView
         self.mapViewController.didMove(toParent: self)
         
-        self.discoveryViewController = UserDiscoveryViewController(with: self.user)
+        self.setDiscoveryHeaderViewController(DiscoveryHeaderViewController())
+        self.discoveryHeaderViewController.username = self.user.username
         
         self.mapViewController.onUserAnnotationSelected = {
-            guard let user = AuthenticationRepository.fetchUser() else { return }
-            self.discoveryViewController = UserDiscoveryViewController(with: user)
+            self.discoveryHeaderViewController.username = self.user.username
         }
         
         self.mapViewController.onStrangerAnnotationSelected = { stranger in
-            self.discoveryViewController = StrangerDiscoveryViewController(with: stranger)
+            self.discoveryHeaderViewController.username = stranger.username
+            self.setDiscoveryViewController(StrangerDiscoveryViewController(with: stranger))
         }
+    }
+    
+    func setDiscoveryViewController(_ discoveryViewController: DiscoveryViewController) {
+        
+        discoveryViewController.presentInteractionController = DiscoveryPresentInteractionController(
+            discoveryViewController: discoveryViewController,
+            discoveryHeaderViewController: self.discoveryHeaderViewController,
+            homeViewController: self)
+        
+        self.discoveryViewController = discoveryViewController
+    }
+    
+    func setDiscoveryHeaderViewController(_ discoveryHeaderViewController: DiscoveryHeaderViewController) {
+        
+        discoveryHeaderViewController.willMove(toParent: self)
+        discoveryHeaderViewController.removeFromParent()
+        discoveryHeaderViewController.view.removeFromSuperview()
+        
+        self.addChild(discoveryHeaderViewController)
+        
+        self.homeView.setDiscoveryHeaderView(discoveryHeaderViewController.headerView)
+        
+        discoveryHeaderViewController.didMove(toParent: self)
+        
+        discoveryHeaderViewController.view.gestureRecognizers?.forEach {
+            discoveryHeaderViewController.view.removeGestureRecognizer($0)
+        }
+        
+        self.discoveryHeaderViewController = discoveryHeaderViewController
     }
 }

@@ -25,6 +25,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "CollapsableView.layoutSubviews():CollapsableView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.containerFrame.size">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in closure #1 in closure #1 in SceneDelegate.scene(_:willConnectTo:options:):SceneDelegate.swift">
          <PersistentStrings>
             <PersistentString
@@ -41,23 +49,7 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "CollapsableView.layoutSubviews():CollapsableView.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.containerFrame.size">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "HomeViewController.viewDidLoad():HomeViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.discoveryViewController.view">
-            </PersistentString>
-            <PersistentString
-               value = "self.discoveryViewController.discoveryView">
-            </PersistentString>
-         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "static AuthenticationRepository.fetchUser():AuthenticationRepository.swift">
@@ -74,6 +66,9 @@
                value = "self.discoveryHeaderView.frame">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "main:Application.swift">
       </ContextState>
       <ContextState
          contextName = "DiscoveryViewController.animationController(forPresented:presenting:source:):DiscoveryViewController.swift">
@@ -163,10 +158,10 @@
          contextName = "HomeViewController.viewDidLayoutSubviews():HomeViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.discoveryViewController">
+               value = "self.collapsableViewController">
             </PersistentString>
             <PersistentString
-               value = "self.collapsableViewController">
+               value = "self.discoveryViewController">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -222,6 +217,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "DiscoveryPresentAnimationController.animateTransition(using:):DiscoveryPresentAnimationController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "toViewController.parent">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "DiscoveryHeaderViewController.viewDidLoad():DiscoveryHeaderViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -244,10 +247,10 @@
          contextName = "closure #1 in closure #1 in static Authentication.login(username:password:):Authentication.swift">
          <PersistentStrings>
             <PersistentString
-               value = "authentication[&quot;hiddenFrom&quot;] as [String]">
+               value = "response.value">
             </PersistentString>
             <PersistentString
-               value = "response.value">
+               value = "authentication[&quot;hiddenFrom&quot;] as [String]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

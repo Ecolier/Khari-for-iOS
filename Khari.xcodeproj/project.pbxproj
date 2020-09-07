@@ -22,6 +22,7 @@
 		203494C2239D0582009D4F61 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203494C1239D0582009D4F61 /* MapViewController.swift */; };
 		203494C4239D0F6A009D4F61 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203494C3239D0F6A009D4F61 /* UserViewController.swift */; };
 		203494CE239E65CA009D4F61 /* StyleSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203494CD239E65CA009D4F61 /* StyleSheet.swift */; };
+		204C032024FFFFFF001F9937 /* DiscoveryDismissInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204C031F24FFFFFF001F9937 /* DiscoveryDismissInteractionController.swift */; };
 		204FE45623B3A6870041C26D /* Khari.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 204FE45423B3A6870041C26D /* Khari.xcdatamodeld */; };
 		205BD7C024B8981E00EFCD07 /* PrivacyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205BD7BF24B8981E00EFCD07 /* PrivacyService.swift */; };
 		205DFC6E24ACCA22005C209D /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205DFC6D24ACCA22005C209D /* AuthenticationService.swift */; };
@@ -35,6 +36,10 @@
 		208FB5B924B4BEF100A6304A /* TouchIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208FB5B824B4BEF100A6304A /* TouchIndicatorView.swift */; };
 		20988D3C24DBEDBC005E017B /* MessageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20988D3B24DBEDBC005E017B /* MessageListView.swift */; };
 		20988D3E24DC0B99005E017B /* ComposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20988D3D24DC0B99005E017B /* ComposeView.swift */; };
+		2099993D24FFC35500E6922D /* DiscoveryPresentInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2099993C24FFC35500E6922D /* DiscoveryPresentInteractionController.swift */; };
+		2099993F24FFC36E00E6922D /* DiscoveryPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2099993E24FFC36E00E6922D /* DiscoveryPresentationController.swift */; };
+		2099994124FFC39100E6922D /* DiscoveryTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2099994024FFC39100E6922D /* DiscoveryTransitioningDelegate.swift */; };
+		2099994324FFC3AE00E6922D /* DiscoveryPresentAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2099994224FFC3AE00E6922D /* DiscoveryPresentAnimationController.swift */; };
 		209B67B024F1A1800063306B /* UserDiscoveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209B67AE24F1A1800063306B /* UserDiscoveryView.swift */; };
 		209FAC41249CFDF900111429 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209FAC40249CFDF900111429 /* UserModel.swift */; };
 		209FAC5B249DDDAF00111429 /* DiscoveryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209FAC55249DDD8000111429 /* DiscoveryHeaderView.swift */; };
@@ -57,6 +62,7 @@
 		20CBA6A02399260300FE90F8 /* KhariUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CBA69F2399260300FE90F8 /* KhariUITests.swift */; };
 		20CBA6AE239926EC00FE90F8 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 20CBA6AD239926EC00FE90F8 /* Podfile */; };
 		20CBA6B223997BB800FE90F8 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CBA6B123997BB800FE90F8 /* MapView.swift */; };
+		20D3619A2500F1FA00206369 /* DiscoveryDismissAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D361992500F1F900206369 /* DiscoveryDismissAnimationController.swift */; };
 		20DB91B724C9D265002C87DF /* DiscoveryHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DB91B624C9D265002C87DF /* DiscoveryHeaderViewController.swift */; };
 		20FCA7E524D70AAA004ED4AA /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FCA7E424D70AAA004ED4AA /* ChatView.swift */; };
 		20FE78C024A20BEA00F859D3 /* StrangerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FE78BF24A20BEA00F859D3 /* StrangerView.swift */; };
@@ -100,6 +106,7 @@
 		203494C1239D0582009D4F61 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		203494C3239D0F6A009D4F61 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		203494CD239E65CA009D4F61 /* StyleSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleSheet.swift; sourceTree = "<group>"; };
+		204C031F24FFFFFF001F9937 /* DiscoveryDismissInteractionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryDismissInteractionController.swift; sourceTree = "<group>"; };
 		204FE45523B3A6870041C26D /* Khari.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Khari.xcdatamodel; sourceTree = "<group>"; };
 		205BD7BF24B8981E00EFCD07 /* PrivacyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyService.swift; sourceTree = "<group>"; };
 		205DFC6D24ACCA22005C209D /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
@@ -113,6 +120,10 @@
 		208FB5B824B4BEF100A6304A /* TouchIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchIndicatorView.swift; sourceTree = "<group>"; };
 		20988D3B24DBEDBC005E017B /* MessageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListView.swift; sourceTree = "<group>"; };
 		20988D3D24DC0B99005E017B /* ComposeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeView.swift; sourceTree = "<group>"; };
+		2099993C24FFC35500E6922D /* DiscoveryPresentInteractionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryPresentInteractionController.swift; sourceTree = "<group>"; };
+		2099993E24FFC36E00E6922D /* DiscoveryPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryPresentationController.swift; sourceTree = "<group>"; };
+		2099994024FFC39100E6922D /* DiscoveryTransitioningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryTransitioningDelegate.swift; sourceTree = "<group>"; };
+		2099994224FFC3AE00E6922D /* DiscoveryPresentAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryPresentAnimationController.swift; sourceTree = "<group>"; };
 		209B67AE24F1A1800063306B /* UserDiscoveryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDiscoveryView.swift; sourceTree = "<group>"; };
 		209FAC40249CFDF900111429 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		209FAC55249DDD8000111429 /* DiscoveryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryHeaderView.swift; sourceTree = "<group>"; };
@@ -142,6 +153,7 @@
 		20CBA6A12399260300FE90F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20CBA6AD239926EC00FE90F8 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		20CBA6B123997BB800FE90F8 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		20D361992500F1F900206369 /* DiscoveryDismissAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryDismissAnimationController.swift; sourceTree = "<group>"; };
 		20DB91B624C9D265002C87DF /* DiscoveryHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryHeaderViewController.swift; sourceTree = "<group>"; };
 		20FCA7E424D70AAA004ED4AA /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		20FE78BF24A20BEA00F859D3 /* StrangerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StrangerView.swift; path = Views/StrangerView.swift; sourceTree = "<group>"; };
@@ -189,6 +201,12 @@
 		201A53B124A1FFF300D4400F /* Discovery */ = {
 			isa = PBXGroup;
 			children = (
+				2099993C24FFC35500E6922D /* DiscoveryPresentInteractionController.swift */,
+				204C031F24FFFFFF001F9937 /* DiscoveryDismissInteractionController.swift */,
+				2099994224FFC3AE00E6922D /* DiscoveryPresentAnimationController.swift */,
+				20D361992500F1F900206369 /* DiscoveryDismissAnimationController.swift */,
+				2099993E24FFC36E00E6922D /* DiscoveryPresentationController.swift */,
+				2099994024FFC39100E6922D /* DiscoveryTransitioningDelegate.swift */,
 				2012220824B8768200B9FB79 /* DiscoveryViewController.swift */,
 				201A53AF24A1FF9700D4400F /* DiscoveryView.swift */,
 			);
@@ -674,6 +692,7 @@
 			files = (
 				201A53B024A1FF9700D4400F /* DiscoveryView.swift in Sources */,
 				20CBA67B239925FF00FE90F8 /* Application.swift in Sources */,
+				2099993F24FFC36E00E6922D /* DiscoveryPresentationController.swift in Sources */,
 				20A1C63D24C0333200A87608 /* AuthenticationButton.swift in Sources */,
 				203494C4239D0F6A009D4F61 /* UserViewController.swift in Sources */,
 				209B67B024F1A1800063306B /* UserDiscoveryView.swift in Sources */,
@@ -692,10 +711,12 @@
 				209FAC5C249DDDAF00111429 /* UserView.swift in Sources */,
 				20988D3E24DC0B99005E017B /* ComposeView.swift in Sources */,
 				20DB91B724C9D265002C87DF /* DiscoveryHeaderViewController.swift in Sources */,
+				2099994324FFC3AE00E6922D /* DiscoveryPresentAnimationController.swift in Sources */,
 				208D8E5324B5F054007FD6CB /* CoverableView.swift in Sources */,
 				201A53AC24A0C6C100D4400F /* StrangerAnnotation.swift in Sources */,
 				208D8E5124B5AFBE007FD6CB /* HomeView.swift in Sources */,
 				206EDF7724DABD4A006E819E /* MessageView.swift in Sources */,
+				2099994124FFC39100E6922D /* DiscoveryTransitioningDelegate.swift in Sources */,
 				203494CE239E65CA009D4F61 /* StyleSheet.swift in Sources */,
 				208FB5B724B472FE00A6304A /* LaunchView.swift in Sources */,
 				209FAC41249CFDF900111429 /* UserModel.swift in Sources */,
@@ -712,6 +733,7 @@
 				20797ABD245C1F5E00DB4D55 /* StrangerViewController.swift in Sources */,
 				2019414824C5AA2400B8EE13 /* DetailViewController.swift in Sources */,
 				20FE78C424A36F6C00F859D3 /* Geography.swift in Sources */,
+				20D3619A2500F1FA00206369 /* DiscoveryDismissAnimationController.swift in Sources */,
 				20CBA6B223997BB800FE90F8 /* MapView.swift in Sources */,
 				20A3B0BD24C031CC00394509 /* AuthenticationViewController.swift in Sources */,
 				20FCA7E524D70AAA004ED4AA /* ChatView.swift in Sources */,
@@ -719,6 +741,8 @@
 				20A3B0C024C031FD00394509 /* AuthenticationView.swift in Sources */,
 				203494C2239D0582009D4F61 /* MapViewController.swift in Sources */,
 				209FAC5E249DDDAF00111429 /* DiscoveryHeaderPicture.swift in Sources */,
+				2099993D24FFC35500E6922D /* DiscoveryPresentInteractionController.swift in Sources */,
+				204C032024FFFFFF001F9937 /* DiscoveryDismissInteractionController.swift in Sources */,
 				20FE78C024A20BEA00F859D3 /* StrangerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

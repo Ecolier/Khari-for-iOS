@@ -10,41 +10,34 @@ import UIKit
 
 class HomeView: UIView {
     
-    var mapView: MapView! = MapView() {
+    var mapView: MapView? {
         didSet {
-            oldValue.removeFromSuperview()
-            self.addSubview(self.mapView)
-            self.mapView.translatesAutoresizingMaskIntoConstraints = false
-            NSLayoutConstraint.activate([
-                self.mapView.topAnchor.constraint(equalTo: self.topAnchor),
-                self.mapView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-                self.mapView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-                self.mapView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            ])
+            oldValue?.removeFromSuperview()
+            if let mapView = self.mapView {
+                self.addSubview(mapView)
+                mapView.translatesAutoresizingMaskIntoConstraints = false
+                NSLayoutConstraint.activate([
+                    mapView.topAnchor.constraint(equalTo: self.topAnchor),
+                    mapView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+                    mapView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+                    mapView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+                ])
+            }
         }
     }
     
-    var discoveryView: DiscoveryView! = DiscoveryView() {
-        didSet {
-            oldValue.removeFromSuperview()
-            self.addSubview(self.discoveryView)
-            self.discoveryView.layer.cornerRadius = 12
-            self.discoveryView.layer.shadowColor = UIColor.black.cgColor
-            self.discoveryView.layer.shadowRadius = 6
-            self.discoveryView.layer.shadowOpacity = 0.08
-            self.discoveryView.backgroundColor = .white
-            self.discoveryView.containerFrame = UIScreen.main.bounds.divided(atDistance: self.safeAreaInsets.top,
-                from: .minYEdge).remainder
-            self.discoveryView.setNeedsLayout()
-            self.discoveryView.layoutIfNeeded()
-        }
+    private(set) var discoveryHeaderView = DiscoveryHeaderView()
+    
+    func setDiscoveryHeaderView(_ discoveryHeaderView: DiscoveryHeaderView) {
+        self.addSubview(discoveryHeaderView)
+        discoveryHeaderView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            discoveryHeaderView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            discoveryHeaderView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            discoveryHeaderView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            discoveryHeaderView.heightAnchor.constraint(equalToConstant: 130)
+        ])
+        self.discoveryHeaderView = discoveryHeaderView
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        self.discoveryView.minHeight = self.discoveryView.discoveryHeaderView.bounds.height
-        self.discoveryView.frame = self.bounds.divided(atDistance: self.safeAreaInsets.top,
-        from: .minYEdge).remainder
-    }
-
 }

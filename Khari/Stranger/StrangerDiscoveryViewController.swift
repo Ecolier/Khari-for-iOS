@@ -15,9 +15,11 @@ class StrangerDiscoveryViewController: DiscoveryViewController {
     
     var chatViewController: ChatViewController?
     
+    var topMargin = NSLayoutConstraint()
+    
     init(with stranger: Stranger) {
         self.stranger = stranger
-        super.init(nibName: nil, bundle: nil)
+        super.init()
     }
     
     required init?(coder: NSCoder) {
@@ -27,29 +29,28 @@ class StrangerDiscoveryViewController: DiscoveryViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.discoveryView.onPanDown = {
-            if let chatViewController = self.chatViewController {
-                let composeView = chatViewController.chatView.composeView
-                if composeView.isFirstResponder {
-                    composeView.resignFirstResponder()
-                }
-            }
+        self.didChangeHeader = {
+            self.topMargin.isActive = false
+            self.topMargin = self.strangerView.topAnchor.constraint(equalTo: self.discoveryView.discoveryHeaderView!.bottomAnchor)
+            self.topMargin.isActive = true
         }
         
-        self.discoveryView.contentView = self.strangerView
+        self.strangerView.translatesAutoresizingMaskIntoConstraints = false
+        self.topMargin = self.strangerView.topAnchor.constraint(equalTo: self.view.topAnchor)
+        self.view.addSubview(self.strangerView)
+        NSLayoutConstraint.activate([
+            self.strangerView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            self.topMargin,
+            self.strangerView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            self.strangerView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+        ])
 
         self.strangerView.messageButton
             .addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showMessageController)))
-        
-        self.discoveryView.discoveryHeaderView.usernameLabel.text = self.stranger.username
     }
     
     @objc func showMessageController(sender: UITapGestureRecognizer) {
-        self.strangerView.removeFromSuperview()
         let chatViewController = ChatViewController(target: self.stranger.username)
-        self.addChild(chatViewController)
-        self.discoveryView.contentView = chatViewController.view
-        chatViewController.didMove(toParent: self)
-        self.chatViewController = chatViewController
+        self.present(chatViewController, animated: true)
     }
 }

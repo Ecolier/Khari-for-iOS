@@ -13,7 +13,7 @@ enum MessageDirection {
     case sent
 }
 
-class ChatView: UIView {
+class ChatView: UIView, UIScrollViewDelegate {
     
     let messageListView = MessageListView()
     let rulesLabel = UILabel()
@@ -26,8 +26,12 @@ class ChatView: UIView {
     init() {
         super.init(frame: .zero)
         
+        self.backgroundColor = .systemBackground
+        
         self.addSubview(self.rulesLabel)
         self.addSubview(self.composeView)
+        
+        self.messageListView.delegate = self
         
         self.composeView.layer.cornerRadius = 6
         self.composeView.backgroundColor = .systemGray6
@@ -58,6 +62,12 @@ class ChatView: UIView {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if self.composeView.frame.contains(scrollView.panGestureRecognizer.location(in: self)) {
+            self.composeView.resignFirstResponder()
+        }
+    }
+    
     func addMessage(_ message: String, direction: MessageDirection) {
         if rulesLabel.superview == self {
             rulesLabel.removeFromSuperview()
@@ -69,7 +79,15 @@ class ChatView: UIView {
                 self.messageListView.bottomAnchor.constraint(equalTo: self.composeView.topAnchor, constant: -18)
             ])
         }
+        
         self.messageListView.addMessage(message, direction: direction)
+        
+        // show the latest message
+        self.messageListView.contentOffset = CGPoint(x: 0,
+                                                     y: self.messageListView.contentSize.height -
+                                                        self.messageListView.bounds.height +
+                                                        self.messageListView.contentInset.bottom
+        )
     }
     
     required init?(coder: NSCoder) {
@@ -77,10 +95,12 @@ class ChatView: UIView {
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
-        lastKeyboardOffset = getKeyboardHeight(notification: notification)
-        self.composeViewBottomAnchor.constant -= lastKeyboardOffset
-        UIView.animate(withDuration: 0.5) {
-            self.layoutIfNeeded()
+        if self.composeViewBottomAnchor.constant == -18 {
+            lastKeyboardOffset = getKeyboardHeight(notification: notification)
+            self.composeViewBottomAnchor.constant -= lastKeyboardOffset
+            UIView.animate(withDuration: 0.5) {
+                self.layoutIfNeeded()
+            }
         }
     }
     
