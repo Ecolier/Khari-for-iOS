@@ -6,5 +6,5 @@
 //  Copyright © 2020 Evan Gruère. All rights reserved.
 //
 
-let ServerBaseUrl = "http://172.20.10.3:5000"
+let ServerBaseUrl = "http://172.20.10.2:5000"
 

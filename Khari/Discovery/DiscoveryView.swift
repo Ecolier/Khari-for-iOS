@@ -8,37 +8,45 @@
 
 import UIKit
 
-class DiscoveryView: CollapsableView {
+class DiscoveryView: UIView {
     
-    var discoveryHeaderView = DiscoveryHeaderView()
+    private var contentViewTopAnchor = NSLayoutConstraint()
     
-    var contentView = UIView() {
-        didSet {
-            oldValue.removeFromSuperview()
-            self.addSubview(self.contentView)
-            self.contentView.translatesAutoresizingMaskIntoConstraints = false
-            NSLayoutConstraint.activate([
-                self.contentView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-                self.contentView.topAnchor.constraint(equalTo: self.discoveryHeaderView.bottomAnchor),
-                self.contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-                self.contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            ])
-        }
-    }
+    private(set) var discoveryHeaderView: DiscoveryHeaderView?
+    private(set) var contentView: UIView?
     
-    override init() {
-        super.init()
-        self.addSubview(self.discoveryHeaderView)
+    init() {
+        super.init(frame: .zero)
+        
+        self.layer.cornerRadius = 12
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowRadius = 6
+        self.layer.shadowOpacity = 0.08
+        self.backgroundColor = .white
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
+    func setHeaderView(_ discoveryHeaderView: DiscoveryHeaderView) {
+        self.addSubview(discoveryHeaderView)
         
-        self.discoveryHeaderView.frame.size.width = self.bounds.width
+        discoveryHeaderView.translatesAutoresizingMaskIntoConstraints = false
+        discoveryHeaderView.layer.shadowColor = UIColor.clear.cgColor
+        
+        self.contentViewTopAnchor.isActive = false
+        if let contentView = self.contentView {
+            self.contentViewTopAnchor = contentView.topAnchor.constraint(equalTo: discoveryHeaderView.topAnchor)
+        }
+        
+        NSLayoutConstraint.activate([
+            discoveryHeaderView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            discoveryHeaderView.topAnchor.constraint(equalTo: self.topAnchor),
+            discoveryHeaderView.trailingAnchor.constraint(equalTo: self.trailingAnchor)
+        ])
+        
+        self.discoveryHeaderView = discoveryHeaderView
     }
     
 }

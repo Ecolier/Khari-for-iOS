@@ -12,6 +12,13 @@ class DiscoveryHeaderViewController: UIViewController {
     
     let headerView = DiscoveryHeaderView()
     
+    var username: String = "" {
+        didSet {
+            self.headerView.usernameLabel.text = self.username
+            self.headerView.setNeedsLayout()
+        }
+    }
+    
     override func loadView() {
         self.view = headerView
     }

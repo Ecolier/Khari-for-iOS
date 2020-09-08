@@ -54,7 +54,6 @@ class CollapsableView: UIView {
             
             if !self.isPanningDown && self.frame.origin.y <= self.containerFrame.minY {
                 self.isInteracting = false
-                return
             }
             
             self.isInteracting = true

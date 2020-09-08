@@ -8,17 +8,17 @@
 
 import UIKit
 
-class UserDiscoveryView: DiscoveryView {
+class UserDiscoveryView: UIView {
     
     let userView = UserView()
     
-    override init() {
-        super.init()
+    init() {
+        super.init(frame: .zero)
         self.addSubview(userView)
         self.userView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             self.userView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            self.userView.topAnchor.constraint(equalTo: self.discoveryHeaderView.bottomAnchor),
+            self.userView.topAnchor.constraint(equalTo: self.bottomAnchor),
             self.userView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             self.userView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
         ])

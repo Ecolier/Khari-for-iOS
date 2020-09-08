@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserDiscoveryViewController: DiscoveryViewController {
+class UserDiscoveryViewController: UIViewController {
 
     let userDiscoveryView = UserDiscoveryView()
     var user: User
@@ -22,9 +22,8 @@ class UserDiscoveryViewController: DiscoveryViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.discoveryView.discoveryHeaderView.usernameLabel.text = self.user.username
+    override func loadView() {
+        self.view = self.userDiscoveryView
     }
     
 }
