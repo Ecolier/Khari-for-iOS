@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "closure #1 in DiscoveryDismissAnimationController.animateTransition(using:):DiscoveryDismissAnimationController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "(fromViewController.view as! StrangerDiscoveryView).discoveryHeaderView.bounds.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DiscoveryPresentAnimationController.animateTransition(using:):DiscoveryPresentAnimationController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "toView.contentView">
+            </PersistentString>
+            <PersistentString
+               value = "toView.subviews[1]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #2 in DiscoveryPresentAnimationController.animateTransition(using:):DiscoveryPresentAnimationController.swift">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

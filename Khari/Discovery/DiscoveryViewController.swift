@@ -10,10 +10,10 @@ import UIKit
 
 class DiscoveryViewController: UIViewController {
     
-    var didChangeHeader: () -> Void = { }
     let discoveryView = DiscoveryView()
     
     private(set) var discoveryHeaderViewController = DiscoveryHeaderViewController()
+    private(set) var contentViewController = UIViewController()
     
     var presentInteractionController: DiscoveryPresentInteractionController?
     var dismissInteractionController: DiscoveryDismissInteractionController?
@@ -32,32 +32,27 @@ class DiscoveryViewController: UIViewController {
         self.view = discoveryView
     }
     
+    func setContentViewController(_ contentViewController: UIViewController) {
+        self.addChild(contentViewController)
+        self.discoveryView.setContentView(contentViewController.view)
+        contentViewController.didMove(toParent: self)
+        self.contentViewController = contentViewController
+    }
+    
     func setDiscoveryHeaderViewController(_ discoveryHeaderViewController: DiscoveryHeaderViewController) {
-        discoveryHeaderViewController.willMove(toParent: nil)
-        discoveryHeaderViewController.removeFromParent()
-        discoveryHeaderViewController.view.removeFromSuperview()
-        
         self.addChild(discoveryHeaderViewController)
-        
-        self.discoveryView.setHeaderView(discoveryHeaderViewController.headerView)
-        
+        (self.view as! DiscoveryView).setHeaderView(discoveryHeaderViewController.headerView)
         discoveryHeaderViewController.didMove(toParent: self)
-        
         discoveryHeaderViewController.view.gestureRecognizers?.forEach {
             self.discoveryHeaderViewController.view.removeGestureRecognizer($0)
         }
-        
         self.discoveryHeaderViewController = discoveryHeaderViewController
-        
         if let presentingViewController = self.presentingViewController as? HomeViewController {
             self.dismissInteractionController = DiscoveryDismissInteractionController(
             discoveryViewController: self,
             discoveryHeaderViewController: self.discoveryHeaderViewController,
             homeViewController: presentingViewController)
         }
-        
-        self.didChangeHeader()
-        
     }
     
 }

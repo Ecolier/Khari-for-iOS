@@ -13,7 +13,8 @@ class DiscoveryPresentAnimationController: NSObject, UIViewControllerAnimatedTra
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         
         guard let fromViewController = transitionContext.viewController(forKey: .from) as? HomeViewController,
-            let toViewController = transitionContext.viewController(forKey: .to) as? DiscoveryViewController
+            let toViewController = transitionContext.viewController(forKey: .to) as? DiscoveryViewController,
+            let toView = transitionContext.view(forKey: .to) as? DiscoveryView
             else {
                 return
         }
@@ -24,7 +25,6 @@ class DiscoveryPresentAnimationController: NSObject, UIViewControllerAnimatedTra
         let headerViewController = fromViewController.discoveryHeaderViewController
         
         let headerView = fromViewController.homeView.discoveryHeaderView
-        let discoveryView = toViewController.discoveryView
         
         let originFrame = headerView.frame
         
@@ -32,19 +32,17 @@ class DiscoveryPresentAnimationController: NSObject, UIViewControllerAnimatedTra
             return
         }
         
-        containerView.addSubview(discoveryView)
-        containerView.addSubview(headerSnapshot)
+        containerView.addSubview(toView)
+        toView.addSubview(headerSnapshot)
         
-        headerSnapshot.frame.origin = originFrame.origin
-        discoveryView.frame = CGRect(x: 0, y: headerSnapshot.frame.maxY, width: finalFrame.width, height: finalFrame.height)
+        toView.frame = CGRect(origin: originFrame.origin, size: finalFrame.size)
+        toView.contentViewTopAnchor.constant = headerSnapshot.frame.height
         
         UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
-            headerSnapshot.frame.origin.y = containerView.safeAreaInsets.top
-            discoveryView.frame.origin.y = containerView.safeAreaInsets.top + headerSnapshot.bounds.height
+            toView.frame.origin.y = containerView.safeAreaInsets.top
         }, completion: { finished in
             if !transitionContext.transitionWasCancelled {
                 headerSnapshot.removeFromSuperview()
-                discoveryView.frame.origin.y = containerView.safeAreaInsets.top
                 toViewController.setDiscoveryHeaderViewController(headerViewController)
             }
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled)

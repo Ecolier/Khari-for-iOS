@@ -29,7 +29,7 @@ class DiscoveryDismissAnimationController: NSObject, UIViewControllerAnimatedTra
         
         UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
             
-            fromViewController.view.frame.origin.y = containerView.bounds.height - fromViewController.discoveryView.discoveryHeaderView!.bounds.height
+            fromViewController.view.frame.origin.y = containerView.bounds.height - (fromViewController.view as! StrangerDiscoveryView).discoveryHeaderView.bounds.height
             
         }, completion: { finished in
             

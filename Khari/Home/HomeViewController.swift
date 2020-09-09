@@ -16,7 +16,7 @@ class HomeViewController: UIViewController {
     
     let mapViewController = MapViewController()
     private(set) var discoveryHeaderViewController = DiscoveryHeaderViewController()
-    var discoveryViewController = DiscoveryViewController()
+    private(set) var discoveryViewController = DiscoveryViewController()
     
     let homeView = HomeView()
     
@@ -78,6 +78,12 @@ class HomeViewController: UIViewController {
         discoveryHeaderViewController.view.gestureRecognizers?.forEach {
             discoveryHeaderViewController.view.removeGestureRecognizer($0)
         }
+        
+        self.discoveryViewController.presentInteractionController = DiscoveryPresentInteractionController(
+            discoveryViewController: self.discoveryViewController,
+            discoveryHeaderViewController: discoveryHeaderViewController,
+            homeViewController: self)
+        
         
         self.discoveryHeaderViewController = discoveryHeaderViewController
     }

@@ -21,17 +21,17 @@ extension DiscoveryViewController: UIViewControllerTransitioningDelegate {
     }
     
     func animationController(forDismissed dismissed: UIViewController)
-        -> UIViewControllerAnimatedTransitioning? {
-            return DiscoveryDismissAnimationController(homeViewController: dismissed.presentingViewController as! HomeViewController)
+    -> UIViewControllerAnimatedTransitioning? {
+        return DiscoveryDismissAnimationController(homeViewController: dismissed.presentingViewController as! HomeViewController)
     }
     
     func interactionControllerForPresentation(using animator: UIViewControllerAnimatedTransitioning)
-        -> UIViewControllerInteractiveTransitioning? {
-            return self.presentInteractionController
+    -> UIViewControllerInteractiveTransitioning? {
+        return self.presentInteractionController
     }
     
     func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning)
-        -> UIViewControllerInteractiveTransitioning? {
-            return self.dismissInteractionController
+    -> UIViewControllerInteractiveTransitioning? {
+        return self.dismissInteractionController
     }
 }
