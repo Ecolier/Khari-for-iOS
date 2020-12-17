@@ -3,12 +3,7 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "closure #1 in DiscoveryDismissAnimationController.animateTransition(using:):DiscoveryDismissAnimationController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "(fromViewController.view as! StrangerDiscoveryView).discoveryHeaderView.bounds.height">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "closure #2 in DiscoveryPresentAnimationController.animateTransition(using:):DiscoveryPresentAnimationController.swift">
       </ContextState>
       <ContextState
          contextName = "DiscoveryPresentAnimationController.animateTransition(using:):DiscoveryPresentAnimationController.swift">
@@ -22,7 +17,12 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #2 in DiscoveryPresentAnimationController.animateTransition(using:):DiscoveryPresentAnimationController.swift">
+         contextName = "MapViewController.viewDidLoad():MapViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.view.bounds">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
    </ContextStates>
 </VariablesViewState>

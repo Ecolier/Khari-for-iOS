@@ -63,7 +63,11 @@
 		20FE78C224A34FE000F859D3 /* StrangerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FE78C124A34FE000F859D3 /* StrangerModel.swift */; };
 		20FE78C424A36F6C00F859D3 /* Geography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FE78C324A36F6C00F859D3 /* Geography.swift */; };
 		319711EF066B236D338FD4A0 /* Pods_Khari.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7BBB00F1E75CCC1E82E2899 /* Pods_Khari.framework */; };
+		355AD44C251B41B900D7910D /* ChatTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355AD44B251B41B900D7910D /* ChatTransitioningDelegate.swift */; };
+		355AD44E251B420100D7910D /* ChatPresentationAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355AD44D251B420100D7910D /* ChatPresentationAnimationController.swift */; };
 		357AA5B12507E7F200CE4691 /* StrangerDiscoveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357AA5B02507E7F200CE4691 /* StrangerDiscoveryView.swift */; };
+		35CDAEBC250A28B600F9ADE0 /* StrangerAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDAEBB250A28B600F9ADE0 /* StrangerAnnotationView.swift */; };
+		35CDAEBE250B9AD800F9ADE0 /* UserAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CDAEBD250B9AD800F9ADE0 /* UserAnnotationView.swift */; };
 		4151BDD64C9EDF3EF6DAAB19 /* Pods_Khari_KhariUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 565C146FF149E953B521C85F /* Pods_Khari_KhariUITests.framework */; };
 		83D1660A548C6C6ECCF42217 /* Pods_KhariTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2DFCAC87604547B126A45D9 /* Pods_KhariTests.framework */; };
 /* End PBXBuildFile section */
@@ -149,7 +153,11 @@
 		20FE78C124A34FE000F859D3 /* StrangerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrangerModel.swift; sourceTree = "<group>"; };
 		20FE78C324A36F6C00F859D3 /* Geography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geography.swift; sourceTree = "<group>"; };
 		326D872C87D8332736EA156A /* Pods-Khari.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Khari.debug.xcconfig"; path = "Target Support Files/Pods-Khari/Pods-Khari.debug.xcconfig"; sourceTree = "<group>"; };
+		355AD44B251B41B900D7910D /* ChatTransitioningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTransitioningDelegate.swift; sourceTree = "<group>"; };
+		355AD44D251B420100D7910D /* ChatPresentationAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPresentationAnimationController.swift; sourceTree = "<group>"; };
 		357AA5B02507E7F200CE4691 /* StrangerDiscoveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrangerDiscoveryView.swift; sourceTree = "<group>"; };
+		35CDAEBB250A28B600F9ADE0 /* StrangerAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrangerAnnotationView.swift; sourceTree = "<group>"; };
+		35CDAEBD250B9AD800F9ADE0 /* UserAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAnnotationView.swift; sourceTree = "<group>"; };
 		4724EF307137C8D933313EFE /* Pods-KhariTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KhariTests.release.xcconfig"; path = "Target Support Files/Pods-KhariTests/Pods-KhariTests.release.xcconfig"; sourceTree = "<group>"; };
 		500D0828BE4B1A945605D869 /* Pods-KhariTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KhariTests.debug.xcconfig"; path = "Target Support Files/Pods-KhariTests/Pods-KhariTests.debug.xcconfig"; sourceTree = "<group>"; };
 		565C146FF149E953B521C85F /* Pods_Khari_KhariUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Khari_KhariUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -209,6 +217,8 @@
 				20CBA6B123997BB800FE90F8 /* MapView.swift */,
 				203494C1239D0582009D4F61 /* MapViewController.swift */,
 				201A53AB24A0C6C100D4400F /* StrangerAnnotation.swift */,
+				35CDAEBB250A28B600F9ADE0 /* StrangerAnnotationView.swift */,
+				35CDAEBD250B9AD800F9ADE0 /* UserAnnotationView.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -216,6 +226,8 @@
 		206EDF7524DABCEA006E819E /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				355AD44D251B420100D7910D /* ChatPresentationAnimationController.swift */,
+				355AD44B251B41B900D7910D /* ChatTransitioningDelegate.swift */,
 				2019414524C4A2DE00B8EE13 /* ChatViewController.swift */,
 				20FCA7E424D70AAA004ED4AA /* ChatView.swift */,
 				20988D3D24DC0B99005E017B /* ComposeView.swift */,
@@ -681,6 +693,8 @@
 				204FE45623B3A6870041C26D /* Khari.xcdatamodeld in Sources */,
 				209FAC5B249DDDAF00111429 /* DiscoveryHeaderView.swift in Sources */,
 				208D8E4F24B4EFE5007FD6CB /* StackButtonView.swift in Sources */,
+				355AD44C251B41B900D7910D /* ChatTransitioningDelegate.swift in Sources */,
+				35CDAEBE250B9AD800F9ADE0 /* UserAnnotationView.swift in Sources */,
 				20C24953249A7518001705F0 /* HomeViewController.swift in Sources */,
 				2019414E24C76DFD00B8EE13 /* SocketManager.swift in Sources */,
 				2019415024C88C1F00B8EE13 /* AuthenticationRepository.swift in Sources */,
@@ -692,10 +706,12 @@
 				20FE78C424A36F6C00F859D3 /* Geography.swift in Sources */,
 				20D3619A2500F1FA00206369 /* DiscoveryDismissAnimationController.swift in Sources */,
 				20CBA6B223997BB800FE90F8 /* MapView.swift in Sources */,
+				355AD44E251B420100D7910D /* ChatPresentationAnimationController.swift in Sources */,
 				20A3B0BD24C031CC00394509 /* AuthenticationViewController.swift in Sources */,
 				20FCA7E524D70AAA004ED4AA /* ChatView.swift in Sources */,
 				205BD7C024B8981E00EFCD07 /* PrivacyService.swift in Sources */,
 				20A3B0C024C031FD00394509 /* AuthenticationView.swift in Sources */,
+				35CDAEBC250A28B600F9ADE0 /* StrangerAnnotationView.swift in Sources */,
 				203494C2239D0582009D4F61 /* MapViewController.swift in Sources */,
 				209FAC5E249DDDAF00111429 /* DiscoveryHeaderPicture.swift in Sources */,
 				2099993D24FFC35500E6922D /* DiscoveryPresentInteractionController.swift in Sources */,

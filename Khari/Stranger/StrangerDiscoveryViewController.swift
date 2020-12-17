@@ -17,7 +17,6 @@ class StrangerDiscoveryViewController: DiscoveryViewController {
     
     let strangerDiscoveryView = StrangerDiscoveryView()
     var chatViewController: ChatViewController?
-    var topMargin = NSLayoutConstraint()
     
     init(with stranger: Stranger) {
         self.stranger = stranger

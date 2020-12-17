@@ -37,7 +37,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         self.addChild(self.mapViewController)
-        self.homeView.mapView = self.mapViewController.view as? MapView
+        self.homeView.mapView = self.mapViewController.view
         self.mapViewController.didMove(toParent: self)
         
         self.setDiscoveryHeaderViewController(DiscoveryHeaderViewController())
@@ -45,6 +45,7 @@ class HomeViewController: UIViewController {
         
         self.mapViewController.onUserAnnotationSelected = {
             self.discoveryHeaderViewController.username = self.user.username
+            self.setDiscoveryViewController(UserDiscoveryViewController(with: self.user))
         }
         
         self.mapViewController.onStrangerAnnotationSelected = { stranger in

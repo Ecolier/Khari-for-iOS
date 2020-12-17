@@ -19,6 +19,8 @@ class ChatViewController: UIViewController {
     init(target: String) {
         self.target = target
         super.init(nibName: nil, bundle: nil)
+        self.modalPresentationStyle = .custom
+        self.transitioningDelegate = self
     }
     
     required init?(coder: NSCoder) {

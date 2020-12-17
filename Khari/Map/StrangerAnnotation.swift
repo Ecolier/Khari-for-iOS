@@ -8,7 +8,10 @@
 
 import Mapbox
 
-class StrangerAnnotation: MGLPointAnnotation {
+class StrangerAnnotation: NSObject, MGLAnnotation {
+    
+    var coordinate = CLLocationCoordinate2D()
+    
     let stranger: Stranger
     
     init(stranger: Stranger) {

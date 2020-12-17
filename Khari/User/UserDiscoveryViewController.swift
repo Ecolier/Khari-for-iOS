@@ -8,14 +8,14 @@
 
 import UIKit
 
-class UserDiscoveryViewController: UIViewController {
+class UserDiscoveryViewController: DiscoveryViewController {
 
     let userDiscoveryView = UserDiscoveryView()
     var user: User
     
     init(with user: User) {
         self.user = user
-        super.init(nibName: nil, bundle: nil)
+        super.init()
     }
     
     required init?(coder: NSCoder) {

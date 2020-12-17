@@ -13,7 +13,7 @@ import Combine
 
 class MapViewController: UIViewController, MGLMapViewDelegate {
     
-    let mapView = MapView()
+    var mapView: MGLMapView!
     
     private var userLocationDidUpdateCancellable: AnyCancellable!
     private var strangerLocationUpdatedCancellable: AnyCancellable!
@@ -21,16 +21,13 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
     
     private lazy var userLocationDidUpdateSubject = PassthroughSubject<CLLocationCoordinate2D, Never>()
     lazy var userLocationDidUpdate = self.userLocationDidUpdateSubject.eraseToAnyPublisher()
-
+    
     var onUserAnnotationSelected: () -> Void = { }
     var onStrangerAnnotationSelected: (Stranger) -> Void = { _ in }
     
     
-    
     init() {
         super.init(nibName: nil, bundle: nil)
-        
-        self.mapView.delegate = self
         
         self.strangerLocationUpdatedCancellable = SocketManager.shared().onStrangerLocationUpdated.sink { stranger in
             self.updateStrangerAnnotationLocation(with: stranger)
@@ -46,6 +43,17 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
                                                       longitude: coordinates.longitude,
                                                       latitude: coordinates.latitude)
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.mapView = MGLMapView(frame: self.view.bounds)
+        self.mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.mapView.styleURL = MGLStyle.streetsStyleURL
+        self.mapView.tintColor = .lightGray
+        self.mapView.zoomLevel = 14
+        self.mapView.delegate = self
+        self.view.addSubview(self.mapView)
     }
     
     func strangerExists(_ username: String) -> Bool {
@@ -81,6 +89,10 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
         self.mapView.addAnnotation(annotation)
     }
     
+    func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
+        mapView.setUserTrackingMode(.follow, animated: false) { }
+    }
+    
     func mapView(_ mapView: MGLMapView, didUpdate userLocation: MGLUserLocation?) {
         if let coordinate = userLocation?.coordinate {
             if (!CLLocationCoordinate2DIsValid(coordinate)) {
@@ -102,12 +114,23 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
         }
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    func mapView(_ mapView: MGLMapView, viewFor annotation: MGLAnnotation) -> MGLAnnotationView? {
+        if annotation is StrangerAnnotation {
+            let reuseIdentifier = "\(annotation.coordinate.longitude)"
+            var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier)
+            if annotationView == nil {
+                annotationView = StrangerAnnotationView(reuseIdentifier: reuseIdentifier)
+            }
+            return annotationView
+        }
+        if annotation is MGLUserLocation {
+            return UserAnnotationView()
+        }
+        return nil
     }
     
-    override func loadView() {
-        self.view = self.mapView
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
 }

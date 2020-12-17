@@ -10,7 +10,7 @@ import UIKit
 
 class HomeView: UIView {
     
-    var mapView: MapView? {
+    var mapView: UIView? {
         didSet {
             oldValue?.removeFromSuperview()
             if let mapView = self.mapView {
